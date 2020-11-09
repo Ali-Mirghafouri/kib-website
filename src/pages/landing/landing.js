@@ -12,7 +12,7 @@ export function Landing() {
       renderCenterLeftControls={() => null}
       renderCenterRightControls={() => null}
       initialSlideHeight={1080}
-      // autoplay={true}
+      autoplay={true}
       wrapAround={true}>
       {CAROUSEL.map((text, index) => (
         <div
