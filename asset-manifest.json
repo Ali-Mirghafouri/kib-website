@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/kib-website/gh-pages/static/css/main.2ddf4a33.chunk.css",
+    "main.js": "/kib-website/gh-pages/static/js/main.eb19e5b4.chunk.js",
+    "main.js.map": "/kib-website/gh-pages/static/js/main.eb19e5b4.chunk.js.map",
+    "runtime-main.js": "/kib-website/gh-pages/static/js/runtime-main.58be1b14.js",
+    "runtime-main.js.map": "/kib-website/gh-pages/static/js/runtime-main.58be1b14.js.map",
+    "static/js/2.c23f61cb.chunk.js": "/kib-website/gh-pages/static/js/2.c23f61cb.chunk.js",
+    "static/js/2.c23f61cb.chunk.js.map": "/kib-website/gh-pages/static/js/2.c23f61cb.chunk.js.map",
+    "static/js/3.c25a714b.chunk.js": "/kib-website/gh-pages/static/js/3.c25a714b.chunk.js",
+    "static/js/3.c25a714b.chunk.js.map": "/kib-website/gh-pages/static/js/3.c25a714b.chunk.js.map",
+    "index.html": "/kib-website/gh-pages/index.html",
+    "static/css/main.2ddf4a33.chunk.css.map": "/kib-website/gh-pages/static/css/main.2ddf4a33.chunk.css.map",
+    "static/js/2.c23f61cb.chunk.js.LICENSE.txt": "/kib-website/gh-pages/static/js/2.c23f61cb.chunk.js.LICENSE.txt",
+    "static/media/slide1.f92ca55e.jpg": "/kib-website/gh-pages/static/media/slide1.f92ca55e.jpg",
+    "static/media/slide2.9f832b3f.jpg": "/kib-website/gh-pages/static/media/slide2.9f832b3f.jpg",
+    "static/media/slide3.2eb2f26d.jpg": "/kib-website/gh-pages/static/media/slide3.2eb2f26d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.58be1b14.js",
+    "static/js/2.c23f61cb.chunk.js",
+    "static/css/main.2ddf4a33.chunk.css",
+    "static/js/main.eb19e5b4.chunk.js"
+  ]
+}
