@@ -13,10 +13,10 @@
   background-size: cover;
 }
 .Carousel_slides_text {
-  font-size: 2vw;
+  font-size: 3vw;
   color: white;
-  width: 24vw;
-  margin-right: 20vw;
+  width: 35vw;
+  margin-right: 30vw;
   margin-bottom: 10vh;
 }
 .Carousel_slides_button {
@@ -27,4 +27,6 @@
   margin-top: 2vh;
   background-color: red;
   color: white;
+  font-size: 1vw;
+  font-weight: bold;
 }
