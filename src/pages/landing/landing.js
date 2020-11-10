@@ -5,16 +5,17 @@ import "./landing.css"
 import {IMAGES} from "../../image"
 
 export function Landing() {
-  // const bg_pic = {backgroundImage: `url(${images.home.bg_picture})`}
   return (
     <Carousel
-      speed={1000}
+      autoplayInterval={5000}
+      speed={2000}
       transitionMode="fade"
       className="wrapAround"
       dragging={false}
       renderCenterLeftControls={() => null}
       renderCenterRightControls={() => null}
       initialSlideHeight={900}
+      he
       autoplay={true}
       pauseOnHover={true}
       wrapAround={true}>
