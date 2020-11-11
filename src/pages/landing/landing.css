@@ -6,28 +6,33 @@
   overflow-y: visible;
   height: inherit;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 110vh;
 }
 .Carousel_slides_text {
-  font-size: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  font-size: 2vw;
   color: white;
-  width: 35vw;
+  width: 25vw;
   margin-right: 30vw;
+  margin-left: 10vw;
   margin-bottom: 10vh;
 }
 .Carousel_slides_button {
   height: 4vh;
-  width: 12vw;
+  width: 7vw;
   border-radius: 10px;
   border: none;
   margin-top: 2vh;
+  margin-right: 18vw;
   background-color: red;
   color: white;
-  font-size: 1vw;
+  font-size: 0.7vw;
   font-weight: bold;
 }
