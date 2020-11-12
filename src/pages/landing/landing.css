@@ -10,6 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 110vh;
+  padding-left: 10vw;
 }
 .Carousel_slides_text {
   display: flex;
@@ -21,8 +22,9 @@
   color: white;
   width: 25vw;
   margin-right: 30vw;
-  margin-left: 10vw;
   margin-bottom: 10vh;
+  font-family: "Questrial", Sans-serif;
+  font-weight: 500;
 }
 .Carousel_slides_button {
   height: 4vh;
@@ -35,4 +37,13 @@
   color: white;
   font-size: 0.7vw;
   font-weight: bold;
+  font-family: "Questrial", Sans-serif;
+}
+.our_clients_text {
+  text-align: center;
+  color: #595959;
+  font-family: "Questrial", Sans-serif;
+  font-weight: 900;
+  font-size: 2vw;
+  margin-top: 11vh;
 }
