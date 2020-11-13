@@ -47,3 +47,50 @@
   font-size: 2vw;
   margin-top: 11vh;
 }
+.our_clients_content {
+  display: flex;
+  column-gap: 15vw;
+  align-items: center;
+  margin-top: 4vh;
+}
+.about_us_content {
+  display: flex;
+  column-gap: 2vw;
+  align-items: center;
+  margin-top: 4vh;
+}
+.our_clients_container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about_us_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about_us_images {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.about_us_text {
+  text-align: center;
+  color: #595959;
+  font-family: "Questrial", Sans-serif;
+  font-weight: 900;
+  font-size: 1.5vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.about_us_description {
+  width: 36vw;
+  text-align: center;
+  color: #7a7a7a;
+  font-family: "Questrial", Sans-serif;
+  font-size: 1vw;
+}
