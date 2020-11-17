@@ -96,9 +96,14 @@
   align-items: center;
   flex-direction: column;
   height: 650px;
+  background-color: #fff;
 }
 .pad50 {
-  margin: 0 50px;
+  padding: 0 50px;
+}
+
+.pad200 {
+  padding: 0 200px;
 }
 .about_us_images {
   display: flex;

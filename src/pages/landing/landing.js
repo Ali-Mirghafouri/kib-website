@@ -1,7 +1,7 @@
 import './landing.css';
 
 import Carousel from 'nuka-carousel';
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 import { HOME } from '../../constant/const';
@@ -49,7 +49,10 @@ export function Landing() {
         {HOME.carousel.map((text, index) => (
           <div
             className="Carousel_slides"
-            style={{backgroundImage: `url(${IMAGES.landing.slides[index]})`}}
+            style={{
+              backgroundImage: `url(${IMAGES.landing.slides[index]})`,
+              backgroundSize: "cover",
+            }}
             key={index}
           >
             <div className="Carousel_slides_text">
@@ -66,9 +69,14 @@ export function Landing() {
       </Carousel>
       <div
         className="subHeading"
-        style={{backgroundImage: `url(${IMAGES.landing.subheading})`}}
+        style={{
+          backgroundImage: `url(${IMAGES.landing.subheading})`,
+          backgroundSize: "1920px auto",
+        }}
       >
-        <div className="subHeading_text">{HOME.subheading}</div>
+        <div className="subHeading_text" style={{padding: "0 70px"}}>
+          {HOME.subheading}
+        </div>
       </div>
       <div
         style={{
@@ -112,7 +120,7 @@ export function Landing() {
           ))}
         </div>
       </div>
-      <div className="about_us_container">
+      <div className="about_us_container" style={{backgroundColor: "#f9f9f9"}}>
         <div className="our_clients_text">{HOME.aboutUs}</div>
         <div className="about_us_content">
           {IMAGES.landing.aboutUs.map((src, index) => (
@@ -126,7 +134,7 @@ export function Landing() {
           ))}
         </div>
       </div>
-      <div className="about_us_container pad50" ref={contacts}>
+      <div className="about_us_container pad200" ref={contacts}>
         <div className="our_clients_text ver50">Contact Us</div>
         <input
           placeholder="Name"
@@ -191,7 +199,7 @@ export function Landing() {
             width: "100%",
             height: 40,
             marginTop: "20px",
-            backgroundColor: "#16B6B2",
+            backgroundColor: "#fd0000",
             border: "none",
             borderRadius: "4px",
             outline: "none",

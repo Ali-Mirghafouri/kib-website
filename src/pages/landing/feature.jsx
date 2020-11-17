@@ -3,7 +3,7 @@ export const FeatureCard = ({item}) => {
   return (
     <div
       style={{
-        width: "45%",
+        width: "36%",
         height: "200px",
         display: "flex",
         flexDirection: "column",
