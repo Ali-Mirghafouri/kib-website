@@ -27,6 +27,13 @@ export function Landing() {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // });
 
+  const navbarLabels = [
+    {label: "Features", link: "#features"},
+    {label: "Clients", link: "#clients"},
+    {label: "About", link: "#about"},
+    {label: "Contact", link: "#contact"},
+  ];
+
   return (
     <Fragment>
       <Carousel
@@ -67,6 +74,32 @@ export function Landing() {
           </div>
         ))}
       </Carousel>
+
+      <div
+        style={{
+          display: "flex",
+          position: "absolute",
+          top: "100px",
+          color: "#FFF",
+          paddingLeft: "10vw",
+          fontSize: "28px",
+          fontFamily: "Questrial, Sans-serif",
+          fontWeight: 500,
+          alignItems: "center",
+        }}
+      >
+        <img
+          src={IMAGES.landing.aboutUs[0]}
+          alt="logo"
+          height="60"
+          style={{marginRight: "30px"}}
+        />
+        {navbarLabels.map((item, index) => (
+          <a className="navbar" href={item.link} key={index}>
+            {item.label}
+          </a>
+        ))}
+      </div>
       <div
         className="subHeading"
         style={{
@@ -79,6 +112,7 @@ export function Landing() {
         </div>
       </div>
       <div
+        id="features"
         style={{
           fontSize: "2.5rem",
           color: "#595959",
@@ -103,7 +137,9 @@ export function Landing() {
         ))}
       </div>
       <div className="our_clients_container">
-        <div className="our_clients_text">{HOME.ourClients}</div>
+        <div id="clients" className="our_clients_text">
+          {HOME.ourClients}
+        </div>
         <div className="our_clients_content">
           {IMAGES.landing.clients.map((src, index) => (
             <Fragment key={index}>
@@ -121,7 +157,9 @@ export function Landing() {
         </div>
       </div>
       <div className="about_us_container" style={{backgroundColor: "#f9f9f9"}}>
-        <div className="our_clients_text">{HOME.aboutUs}</div>
+        <div id="about" className="our_clients_text">
+          {HOME.aboutUs}
+        </div>
         <div className="about_us_content">
           {IMAGES.landing.aboutUs.map((src, index) => (
             <div key={index} className="about_us_images">
@@ -135,7 +173,9 @@ export function Landing() {
         </div>
       </div>
       <div className="about_us_container pad200" ref={contacts}>
-        <div className="our_clients_text ver50">Contact Us</div>
+        <div id="contact" className="our_clients_text ver50">
+          Contact Us
+        </div>
         <input
           placeholder="Name"
           style={{
