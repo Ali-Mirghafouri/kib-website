@@ -1,22 +1,22 @@
-import './landing.css';
+import "./landing.css"
 
-import Carousel from 'nuka-carousel';
-import React, { Fragment, useRef } from 'react';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import Carousel from "nuka-carousel"
+import React, {Fragment, useRef} from "react"
+import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai"
 
-import { HOME } from '../../constant/const';
-import { IMAGES } from '../../image';
-import { FeatureCard } from './feature';
+import {HOME} from "../../constant/const"
+import {IMAGES} from "../../image"
+import {FeatureCard} from "./feature"
 
-export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN";
-export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP";
-export const SCROLL_DIRECTION_NONE = "SCROLL_DIRECTION_NONE";
+export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN"
+export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP"
+export const SCROLL_DIRECTION_NONE = "SCROLL_DIRECTION_NONE"
 
 export function Landing() {
-  const contacts = useRef();
+  const contacts = useRef()
   const executeScroll = () => {
-    contacts.current.scrollIntoView({behavior: "smooth"});
-  };
+    contacts.current.scrollIntoView({behavior: "smooth"})
+  }
 
   // const handleScroll = () => {
   //   // console.log(window.pageYOffset);
@@ -32,10 +32,29 @@ export function Landing() {
     {label: "Clients", link: "#clients"},
     {label: "About", link: "#about"},
     {label: "Contact", link: "#contact"},
-  ];
+  ]
 
   return (
     <Fragment>
+      <div
+        style={{
+          display: "flex",
+          top: "100px",
+          color: "#FFF",
+          paddingLeft: "10vw",
+          fontSize: "28px",
+          fontFamily: "Questrial, Sans-serif",
+          fontWeight: 500,
+          alignItems: "center",
+          backgroundColor: "grey",
+        }}>
+        <img src={IMAGES.landing.aboutUs[0]} alt="logo" height="60" style={{marginRight: "30px"}} />
+        {navbarLabels.map((item, index) => (
+          <a className="navbar" href={item.link} key={index}>
+            {item.label}
+          </a>
+        ))}
+      </div>
       <Carousel
         autoplay={false}
         autoplayInterval={2000}
@@ -51,8 +70,7 @@ export function Landing() {
         )}
         renderCenterRightControls={({nextSlide}) => (
           <AiOutlineRight color="white" size="40px" onClick={nextSlide} />
-        )}
-      >
+        )}>
         {HOME.carousel.map((text, index) => (
           <div
             className="Carousel_slides"
@@ -60,14 +78,10 @@ export function Landing() {
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
               backgroundSize: "cover",
             }}
-            key={index}
-          >
+            key={index}>
             <div className="Carousel_slides_text">
               {text}
-              <button
-                className="Carousel_slides_button"
-                onClick={executeScroll}
-              >
+              <button className="Carousel_slides_button" onClick={executeScroll}>
                 {HOME.slidesButtons[index]}
               </button>
             </div>
@@ -76,37 +90,11 @@ export function Landing() {
       </Carousel>
 
       <div
-        style={{
-          display: "flex",
-          position: "absolute",
-          top: "100px",
-          color: "#FFF",
-          paddingLeft: "10vw",
-          fontSize: "28px",
-          fontFamily: "Questrial, Sans-serif",
-          fontWeight: 500,
-          alignItems: "center",
-        }}
-      >
-        <img
-          src={IMAGES.landing.aboutUs[0]}
-          alt="logo"
-          height="60"
-          style={{marginRight: "30px"}}
-        />
-        {navbarLabels.map((item, index) => (
-          <a className="navbar" href={item.link} key={index}>
-            {item.label}
-          </a>
-        ))}
-      </div>
-      <div
         className="subHeading"
         style={{
           backgroundImage: `url(${IMAGES.landing.subheading})`,
           backgroundSize: "1920px auto",
-        }}
-      >
+        }}>
         <div className="subHeading_text" style={{padding: "0 70px"}}>
           {HOME.subheading}
         </div>
@@ -120,8 +108,7 @@ export function Landing() {
           margin: "100px 0 50px 0",
           fontFamily: "Questrial, Sans-serif",
           fontWeight: 900,
-        }}
-      >
+        }}>
         Our Features
       </div>
       <div
@@ -130,8 +117,7 @@ export function Landing() {
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "center",
-        }}
-      >
+        }}>
         {HOME.features.map((item, index) => (
           <FeatureCard key={index} item={item} />
         ))}
@@ -165,9 +151,7 @@ export function Landing() {
             <div key={index} className="about_us_images">
               <img src={src} alt={src}></img>
               <div className="about_us_text">{HOME.aboutUsLogoName[index]}</div>
-              <div className="about_us_description">
-                {HOME.aboutUsDescription[index]}
-              </div>
+              <div className="about_us_description">{HOME.aboutUsDescription[index]}</div>
             </div>
           ))}
         </div>
@@ -193,8 +177,7 @@ export function Landing() {
             flexDirection: "row",
             width: "100%",
             margin: "10px 0",
-          }}
-        >
+          }}>
           <input
             placeholder="Email"
             style={{
@@ -253,5 +236,5 @@ export function Landing() {
         />
       </div>
     </Fragment>
-  );
+  )
 }
