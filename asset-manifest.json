@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kib-website/static/css/main.1d16612d.chunk.css",
-    "main.js": "/kib-website/static/js/main.78f954e9.chunk.js",
-    "main.js.map": "/kib-website/static/js/main.78f954e9.chunk.js.map",
+    "main.css": "/kib-website/static/css/main.ad958b6f.chunk.css",
+    "main.js": "/kib-website/static/js/main.b6f7d5bb.chunk.js",
+    "main.js.map": "/kib-website/static/js/main.b6f7d5bb.chunk.js.map",
     "runtime-main.js": "/kib-website/static/js/runtime-main.c6a3951a.js",
     "runtime-main.js.map": "/kib-website/static/js/runtime-main.c6a3951a.js.map",
     "static/js/2.f93ac6e5.chunk.js": "/kib-website/static/js/2.f93ac6e5.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.05415957.chunk.js": "/kib-website/static/js/3.05415957.chunk.js",
     "static/js/3.05415957.chunk.js.map": "/kib-website/static/js/3.05415957.chunk.js.map",
     "index.html": "/kib-website/index.html",
-    "static/css/main.1d16612d.chunk.css.map": "/kib-website/static/css/main.1d16612d.chunk.css.map",
+    "static/css/main.ad958b6f.chunk.css.map": "/kib-website/static/css/main.ad958b6f.chunk.css.map",
     "static/js/2.f93ac6e5.chunk.js.LICENSE.txt": "/kib-website/static/js/2.f93ac6e5.chunk.js.LICENSE.txt",
     "static/media/phone2.c06a828f.jpg": "/kib-website/static/media/phone2.c06a828f.jpg",
     "static/media/regovLogo.a16351d6.png": "/kib-website/static/media/regovLogo.a16351d6.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.c6a3951a.js",
     "static/js/2.f93ac6e5.chunk.js",
-    "static/css/main.1d16612d.chunk.css",
-    "static/js/main.78f954e9.chunk.js"
+    "static/css/main.ad958b6f.chunk.css",
+    "static/js/main.b6f7d5bb.chunk.js"
   ]
 }
