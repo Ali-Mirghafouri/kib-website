@@ -7,9 +7,9 @@
   height: inherit;
   display: flex;
   flex-direction: column;
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 110vh;
+  background-size: 120% 120vh;
   padding-left: 10vw;
 }
 .Carousel_slides:focus {
@@ -18,7 +18,7 @@
 }
 .Carousel_slides_image {
   height: inherit;
-  background-position: center top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

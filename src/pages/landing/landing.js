@@ -62,7 +62,8 @@ export function Landing() {
         autoplayInterval={2000}
         className="wrapAround"
         dragging={false}
-        initialSlideHeight={1000}
+        initialSlideHeight={800}
+        height={800}
         // pauseOnHover={true}
         speed={2000}
         transitionMode="fade"
@@ -78,7 +79,6 @@ export function Landing() {
             className="Carousel_slides"
             style={{
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
-              backgroundSize: "cover",
             }}
             key={index}>
             <div className="Carousel_slides_text">
