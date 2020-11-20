@@ -58,13 +58,13 @@ export function Landing() {
         ))}
       </div>
       <Carousel
-        autoplay={false}
+        autoplay={true}
         autoplayInterval={2000}
         className="wrapAround"
         dragging={false}
         initialSlideHeight={800}
         height={800}
-        // pauseOnHover={true}
+        pauseOnHover={true}
         speed={2000}
         transitionMode="fade"
         wrapAround={true}
@@ -130,17 +130,7 @@ export function Landing() {
         </div>
         <div className="our_clients_content">
           {IMAGES.landing.clients.map((src, index) => (
-            <Fragment key={index}>
-              <img
-                src={src}
-                alt={src}
-                style={
-                  {
-                    // height: index === 0 ? "40" : "10vh",
-                  }
-                }
-              />
-            </Fragment>
+            <img key={index} src={src} alt={src} />
           ))}
         </div>
       </div>
