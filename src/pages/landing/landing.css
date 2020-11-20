@@ -74,7 +74,7 @@
 .our_clients_content {
   display: flex;
   height: 300px;
-  column-gap: 250px;
+  column-gap: 24vw;
   margin-bottom: 80px;
   align-items: center;
 }
