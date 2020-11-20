@@ -38,17 +38,19 @@ export function Landing() {
     <Fragment>
       <div
         style={{
+          position: "absolute",
           display: "flex",
-          top: "100px",
+          top: "15px",
           color: "#FFF",
           paddingLeft: "10vw",
           fontSize: "28px",
           fontFamily: "Questrial, Sans-serif",
           fontWeight: 500,
           alignItems: "center",
-          backgroundColor: "grey",
+          zIndex: "1000",
         }}>
         <img src={IMAGES.landing.aboutUs[0]} alt="logo" height="60" style={{marginRight: "30px"}} />
+        <div style={{color: "rgb(152, 240, 73)", fontWeight: "bold", fontSize: "34px"}}>RICHA</div>
         {navbarLabels.map((item, index) => (
           <a className="navbar" href={item.link} key={index}>
             {item.label}
