@@ -1,22 +1,23 @@
-import "./landing.css"
+import './landing.css';
 
-import Carousel from "nuka-carousel"
-import React, {Fragment, useRef} from "react"
-import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai"
+import Carousel from 'nuka-carousel';
+import React, { Fragment, useRef } from 'react';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import Particles from 'react-particles-js';
 
-import {HOME} from "../../constant/const"
-import {IMAGES} from "../../image"
-import {FeatureCard} from "./feature"
+import { HOME } from '../../constant/const';
+import { IMAGES } from '../../image';
+import { FeatureCard } from './feature';
 
-export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN"
-export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP"
-export const SCROLL_DIRECTION_NONE = "SCROLL_DIRECTION_NONE"
+export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN";
+export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP";
+export const SCROLL_DIRECTION_NONE = "SCROLL_DIRECTION_NONE";
 
 export function Landing() {
-  const contacts = useRef()
+  const contacts = useRef();
   const executeScroll = () => {
-    contacts.current.scrollIntoView({behavior: "smooth"})
-  }
+    contacts.current.scrollIntoView({behavior: "smooth"});
+  };
 
   // const handleScroll = () => {
   //   // console.log(window.pageYOffset);
@@ -32,7 +33,7 @@ export function Landing() {
     {label: "Clients", link: "#clients"},
     {label: "About", link: "#about"},
     {label: "Contact", link: "#contact"},
-  ]
+  ];
 
   return (
     <Fragment>
@@ -48,9 +49,23 @@ export function Landing() {
           fontWeight: 500,
           alignItems: "center",
           zIndex: "1000",
-        }}>
-        <img src={IMAGES.landing.aboutUs[0]} alt="logo" height="60" style={{marginRight: "30px"}} />
-        <div style={{color: "rgb(152, 240, 73)", fontWeight: "bold", fontSize: "34px"}}>RICHA</div>
+        }}
+      >
+        <img
+          src={IMAGES.landing.aboutUs[0]}
+          alt="logo"
+          height="60"
+          style={{marginRight: "30px"}}
+        />
+        <div
+          style={{
+            color: "rgb(152, 240, 73)",
+            fontWeight: "bold",
+            fontSize: "34px",
+          }}
+        >
+          RICHA
+        </div>
         {navbarLabels.map((item, index) => (
           <a className="navbar" href={item.link} key={index}>
             {item.label}
@@ -73,30 +88,56 @@ export function Landing() {
         )}
         renderCenterRightControls={({nextSlide}) => (
           <AiOutlineRight color="white" size="40px" onClick={nextSlide} />
-        )}>
+        )}
+      >
         {HOME.carousel.map((text, index) => (
           <div
             className="Carousel_slides"
             style={{
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
             }}
-            key={index}>
+            key={index}
+          >
             <div className="Carousel_slides_text">
               {text}
-              <button className="Carousel_slides_button" onClick={executeScroll}>
+              <button
+                className="Carousel_slides_button"
+                onClick={executeScroll}
+              >
                 {HOME.slidesButtons[index]}
               </button>
             </div>
           </div>
         ))}
       </Carousel>
-
+      <Particles
+        style={{backgroundColor: "#999"}}
+        params={{
+          particles: {
+            number: {
+              value: 50,
+            },
+            size: {
+              value: 3,
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: "repulse",
+              },
+            },
+          },
+        }}
+      />
       <div
         className="subHeading"
         style={{
           backgroundImage: `url(${IMAGES.landing.subheading})`,
           backgroundSize: "1920px auto",
-        }}>
+        }}
+      >
         <div className="subHeading_text" style={{padding: "0 70px"}}>
           {HOME.subheading}
         </div>
@@ -110,7 +151,8 @@ export function Landing() {
           margin: "100px 0 50px 0",
           fontFamily: "Questrial, Sans-serif",
           fontWeight: 900,
-        }}>
+        }}
+      >
         Our Features
       </div>
       <div
@@ -119,7 +161,8 @@ export function Landing() {
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "center",
-        }}>
+        }}
+      >
         {HOME.features.map((item, index) => (
           <FeatureCard key={index} item={item} />
         ))}
@@ -143,7 +186,9 @@ export function Landing() {
             <div key={index} className="about_us_images">
               <img src={src} alt={src}></img>
               <div className="about_us_text">{HOME.aboutUsLogoName[index]}</div>
-              <div className="about_us_description">{HOME.aboutUsDescription[index]}</div>
+              <div className="about_us_description">
+                {HOME.aboutUsDescription[index]}
+              </div>
             </div>
           ))}
         </div>
@@ -169,7 +214,8 @@ export function Landing() {
             flexDirection: "row",
             width: "100%",
             margin: "10px 0",
-          }}>
+          }}
+        >
           <input
             placeholder="Email"
             style={{
@@ -228,5 +274,5 @@ export function Landing() {
         />
       </div>
     </Fragment>
-  )
+  );
 }
