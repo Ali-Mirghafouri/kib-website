@@ -48,19 +48,52 @@ export function Landing() {
     {label: "Contact", link: "#contact"},
   ];
 
-  let pd = (width - 880) / 15;
+  let fs18 = width - 330;
+  if (fs18 < 0) {
+    fs18 = 20;
+  } else {
+    fs18 = 18 + fs18 / 100;
+  }
+  if (fs18 > 32) {
+    fs18 = 32;
+  }
+  let csw = width - 100;
+  if (csw < 300) {
+    csw = 300;
+  } else {
+    csw = 300 + csw / 12;
+  }
+  if (csw > 440) csw = 440;
+
+  const Carousel_slides_text = {
+    color: "white",
+    display: "flex",
+    flexDirection: "column",
+    fontSize: `${fs18}px`,
+    fontFamily: "Questrial, Sans-serif",
+    fontWeight: "500",
+    height: "100%",
+    justifyContent: "center",
+    // marginBottom: "35vh",
+    // marginBottom: "25vh",
+    textShadow: "2px 2px 4px #0009",
+    marginRight: "30vw",
+    width: `${csw}px`,
+  };
+
   let fs = width - 1120;
   if (fs < 0) {
-    fs = 2;
+    fs = 2.5;
   } else {
     fs = 1.5;
   }
+  let pd = (width - 880) / 20;
   if (pd < 0) pd = 0;
 
   const navbarHover = {
     textDecoration: "none",
     color: "#fff",
-    padding: `0 ${20 + pd}px`,
+    padding: `0 ${15 + pd}px`,
     fontSize: `${fs}vw`,
     backgroundColor: "#dddddd66",
     borderRadius: "8px",
@@ -69,20 +102,62 @@ export function Landing() {
   const navbar = {
     textDecoration: "none",
     color: "#fff",
-    padding: `0 ${20 + pd}px`,
+    padding: `0 ${15 + pd}px`,
     fontSize: `${fs}vw`,
   };
 
+  let bh = width - 330;
+  if (bh < 0) bh = 0;
+  bh = 29 + bh / 140;
+  if (bh > 39) bh = 39;
+
+  let bpd = (width - 400) / 170;
+  if (bpd < 0) bpd = 0;
+  if (bpd > 8) bpd = 8;
+
+  let bfs = bpd / 4;
+  if (bfs > 3) bfs = 3;
+
+  const Carousel_slides_button = {
+    alignSelf: "flex-start",
+    height: `${bh}px`,
+    width: "auto",
+    borderRadius: `${10 + bpd}px`,
+    border: "none",
+    marginTop: "30px",
+    marginRight: "10%",
+    padding: `0px ${16 + bpd}px`,
+    backgroundColor: "#fd0000",
+    color: "white",
+    fontSize: `${12 + bpd}px`,
+    fontWeight: "bold",
+    fontFamily: "Questrial, Sans-serif",
+    textShadow: "2px 2px 4px #0009",
+  };
+
+  let carh = width - 400;
+  if (carh < 0) carh = 0;
+  carh = 400 + carh / 3.4;
+  console.log(carh);
+
   const Carousel_slides = {
     overflowY: "visible",
-    height: height.toString().concat("px"),
+    // height: height.toString().concat("px"),
     display: "flex",
     flexDirection: "column",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     paddingLeft: "10vw",
+    height: `${carh}px`,
   };
+  // .Carousel_slides_button:focus {
+  //   outline: none;
+  //   box-shadow: none;
+  // }
+  // .Carousel_slides_button:hover {
+  //   cursor: pointer;
+  // }
 
   return (
     <Fragment>
@@ -138,12 +213,13 @@ export function Landing() {
         ))}
       </div>
       <Carousel
-        autoplay={true}
+        style={{height: `${carh}px`}}
+        autoplay={false}
         autoplayInterval={2000}
         className="wrapAround"
         dragging={false}
-        initialSlideHeight={800}
-        height={"800"}
+        // initialSlideHeight={400}
+        // height={carh.toString()}
         pauseOnHover={true}
         speed={2000}
         transitionMode="fade"
@@ -163,12 +239,9 @@ export function Landing() {
             }}
             key={index}
           >
-            <div className="Carousel_slides_text">
+            <div style={Carousel_slides_text}>
               {text}
-              <button
-                className="Carousel_slides_button"
-                onClick={executeScroll}
-              >
+              <button style={Carousel_slides_button} onClick={executeScroll}>
                 {HOME.slidesButtons[index]}
               </button>
             </div>

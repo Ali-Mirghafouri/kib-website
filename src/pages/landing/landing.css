@@ -13,44 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.Carousel_slides_text {
-  align-items: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: 32px;
-  font-family: "Questrial", Sans-serif;
-  font-weight: 500;
-  height: 100%;
-  justify-content: center;
-  text-shadow: 2px 2px 4px #0009;
-  margin-right: 30vw;
-  width: 420px;
-  /* margin-bottom: 10vh; */
-}
-.Carousel_slides_button {
-  align-self: flex-start;
-  height: 39px;
-  width: auto;
-  border-radius: 13px;
-  border: none;
-  margin-top: 30px;
-  margin-right: 10%;
-  padding: 10px 24px;
-  background-color: #fd0000;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: "Questrial", Sans-serif;
-  text-shadow: 2px 2px 4px #0009;
-}
-.Carousel_slides_button:focus {
-  outline: none;
-  box-shadow: none;
-}
-.Carousel_slides_button:hover {
-  cursor: pointer;
-}
+
 .our_clients_text {
   text-align: center;
   color: #595959;
@@ -145,7 +108,6 @@
   margin-top: auto;
   margin-bottom: 10vh;
 }
-
 
 .navbar:hover {
   text-decoration: none;
