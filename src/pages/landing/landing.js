@@ -21,6 +21,8 @@ export function Landing() {
 
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
+
+  const [navIndex, setNavIndex] = useState(-1);
   const updateDimensions = () => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
@@ -45,11 +47,30 @@ export function Landing() {
     {label: "About", link: "#about"},
     {label: "Contact", link: "#contact"},
   ];
+
+  let pd = (width - 880) / 15;
+  let fs = width - 1120;
+  if (fs < 0) {
+    fs = 2;
+  } else {
+    fs = 1.5;
+  }
+  if (pd < 0) pd = 0;
+
+  const navbarHover = {
+    textDecoration: "none",
+    color: "#fff",
+    padding: `0 ${20 + pd}px`,
+    fontSize: `${fs}vw`,
+    backgroundColor: "#dddddd66",
+    borderRadius: "8px",
+    transition: "background-color 0.2s ease",
+  };
   const navbar = {
     textDecoration: "none",
     color: "#fff",
-    padding: `0 ${20 + (width - 880) / 15}px`,
-    fontSize: "15px",
+    padding: `0 ${20 + pd}px`,
+    fontSize: `${fs}vw`,
   };
 
   const Carousel_slides = {
@@ -93,20 +114,25 @@ export function Landing() {
         <img
           src={IMAGES.landing.aboutUs[0]}
           alt="logo"
-          height="60"
-          style={{marginRight: "30px"}}
+          style={{marginRight: "3vw", height: "3vw"}}
         />
         <div
           style={{
             color: "rgb(152, 240, 73)",
             fontWeight: "bold",
-            fontSize: "34px",
+            fontSize: "3vw",
           }}
         >
           RICHA
         </div>
         {navbarLabels.map((item, index) => (
-          <a style={navbar} href={item.link} key={index}>
+          <a
+            style={index === navIndex ? navbarHover : navbar}
+            href={item.link}
+            key={index}
+            onMouseEnter={() => setNavIndex(index)}
+            onMouseLeave={() => setNavIndex(-1)}
+          >
             {item.label}
           </a>
         ))}
@@ -117,7 +143,7 @@ export function Landing() {
         className="wrapAround"
         dragging={false}
         initialSlideHeight={800}
-        height={800}
+        height={"800"}
         pauseOnHover={true}
         speed={2000}
         transitionMode="fade"
