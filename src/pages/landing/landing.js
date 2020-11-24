@@ -1,7 +1,7 @@
 import './landing.css';
 
 import Carousel from 'nuka-carousel';
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import Particles from 'react-particles-js';
 
@@ -19,6 +19,17 @@ export function Landing() {
     contacts.current.scrollIntoView({behavior: "smooth"});
   };
 
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
   // const handleScroll = () => {
   //   // console.log(window.pageYOffset);
   // };
@@ -34,9 +45,37 @@ export function Landing() {
     {label: "About", link: "#about"},
     {label: "Contact", link: "#contact"},
   ];
+  const navbar = {
+    textDecoration: "none",
+    color: "#fff",
+    padding: `0 ${20 + (width - 880) / 15}px`,
+    fontSize: "15px",
+  };
+
+  const Carousel_slides = {
+    overflowY: "visible",
+    height: height.toString().concat("px"),
+    display: "flex",
+    flexDirection: "column",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    paddingLeft: "10vw",
+  };
 
   return (
     <Fragment>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          color: "red",
+          zIndex: 10,
+        }}
+      >
+        {width}x{height}
+      </div>
       <div
         style={{
           position: "absolute",
@@ -67,7 +106,7 @@ export function Landing() {
           RICHA
         </div>
         {navbarLabels.map((item, index) => (
-          <a className="navbar" href={item.link} key={index}>
+          <a style={navbar} href={item.link} key={index}>
             {item.label}
           </a>
         ))}
@@ -92,8 +131,8 @@ export function Landing() {
       >
         {HOME.carousel.map((text, index) => (
           <div
-            className="Carousel_slides"
             style={{
+              ...Carousel_slides,
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
             }}
             key={index}
@@ -110,34 +149,47 @@ export function Landing() {
           </div>
         ))}
       </Carousel>
-      <Particles
-        style={{backgroundColor: "#999"}}
-        params={{
-          particles: {
-            number: {
-              value: 50,
-            },
-            size: {
-              value: 3,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
-              },
-            },
-          },
-        }}
-      />
       <div
         className="subHeading"
         style={{
           backgroundImage: `url(${IMAGES.landing.subheading})`,
           backgroundSize: "1920px auto",
+          position: "relative",
         }}
       >
+        <Particles
+          style={{
+            backgroundColor: "#0000",
+            position: "absolute",
+            marginLeft: "-100px",
+          }}
+          color="#ff0"
+          width="2000px"
+          params={{
+            particles: {
+              number: {
+                value: 140,
+              },
+              size: {
+                value: 2,
+              },
+              color: {
+                value: "#aaa",
+              },
+              shape: {
+                strole: {
+                  width: 0,
+                  color: "#555",
+                },
+              },
+            },
+            opacity: {
+              value: 0.1,
+              random: false,
+              maximumValue: 0.3,
+            },
+          }}
+        />
         <div className="subHeading_text" style={{padding: "0 70px"}}>
           {HOME.subheading}
         </div>

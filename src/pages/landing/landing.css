@@ -2,16 +2,7 @@
   width: 100%;
   height: 100%;
 }
-.Carousel_slides {
-  overflow-y: visible;
-  height: inherit;
-  display: flex;
-  flex-direction: column;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 120% 120vh;
-  padding-left: 10vw;
-}
+
 .Carousel_slides:focus {
   outline: none;
   box-shadow: none;
@@ -155,12 +146,7 @@
   margin-bottom: 10vh;
 }
 
-.navbar {
-  text-decoration: none;
-  color: #fff;
-  padding: 0 60px;
-  font-size: 15px;
-}
+
 .navbar:hover {
   text-decoration: none;
   color: #ccc;
