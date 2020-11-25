@@ -139,7 +139,7 @@ export function Landing() {
   if (carh < 0) carh = 0;
   carh = 400 + carh / 3.4;
   console.log(carh);
-
+  if (carh > 600) carh = height - 10;
   const Carousel_slides = {
     overflowY: "visible",
     // height: height.toString().concat("px"),
@@ -218,8 +218,6 @@ export function Landing() {
         autoplayInterval={2000}
         className="wrapAround"
         dragging={false}
-        // initialSlideHeight={400}
-        // height={carh.toString()}
         pauseOnHover={true}
         speed={2000}
         transitionMode="fade"
@@ -236,6 +234,7 @@ export function Landing() {
             style={{
               ...Carousel_slides,
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
+              backgroundSize: `${width + 190}px auto`,
             }}
             key={index}
           >
@@ -252,22 +251,26 @@ export function Landing() {
         className="subHeading"
         style={{
           backgroundImage: `url(${IMAGES.landing.subheading})`,
-          backgroundSize: "1920px auto",
+          backgroundSize: `${width + 50}px`,
           position: "relative",
+          border: "1px solid red",
+          height: `${carh - 160}px`,
         }}
       >
         <Particles
           style={{
             backgroundColor: "#0000",
             position: "absolute",
-            marginLeft: "-100px",
+            left: 0,
+            // marginLeft: "-300px",
           }}
           color="#ff0"
-          width="2000px"
+          width={`${width + 70}px`}
+          // height={`${carh}px`}
           params={{
             particles: {
               number: {
-                value: 140,
+                value: width / 10,
               },
               size: {
                 value: 2,
@@ -289,7 +292,7 @@ export function Landing() {
             },
           }}
         />
-        <div className="subHeading_text" style={{padding: "0 70px"}}>
+        <div className="subHeading_text" style={{padding: "0 10vw"}}>
           {HOME.subheading}
         </div>
       </div>

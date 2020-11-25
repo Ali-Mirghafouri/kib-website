@@ -85,18 +85,18 @@
 }
 
 .subHeading {
-  height: 80%;
+  /* height: 80%; */
   background-position: center -50px;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
   color: white;
   text-align: center;
   text-shadow: 2px 2px 4px #0009;
   font-family: "Questrial", Sans-serif;
   font-size: 40px;
   font-weight: 100;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  /* padding-left: 5vw; */
+  /* padding-right: 5vw; */
   display: flex;
   justify-content: center;
 }
@@ -107,6 +107,7 @@
 .subHeading_text {
   margin-top: auto;
   margin-bottom: 10vh;
+  font-size: 32px;
 }
 
 .navbar:hover {
