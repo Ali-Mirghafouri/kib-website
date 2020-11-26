@@ -104,12 +104,6 @@
   filter: brightness(50%);
 }
 
-.subHeading_text {
-  margin-top: auto;
-  margin-bottom: 10vh;
-  font-size: 32px;
-}
-
 .navbar:hover {
   text-decoration: none;
   color: #ccc;

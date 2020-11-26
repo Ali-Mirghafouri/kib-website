@@ -52,16 +52,17 @@ export function Landing() {
   if (fs18 < 0) {
     fs18 = 20;
   } else {
-    fs18 = 18 + fs18 / 100;
+    fs18 = 12 + fs18 / 20;
   }
   if (fs18 > 32) {
     fs18 = 32;
   }
+
   let csw = width - 100;
-  if (csw < 300) {
-    csw = 300;
+  if (csw < 200) {
+    csw = 150;
   } else {
-    csw = 300 + csw / 12;
+    csw = 150 + csw / 5;
   }
   if (csw > 440) csw = 440;
 
@@ -83,7 +84,7 @@ export function Landing() {
 
   let fs = width - 1120;
   if (fs < 0) {
-    fs = 2.5;
+    fs = 3;
   } else {
     fs = 1.5;
   }
@@ -93,7 +94,7 @@ export function Landing() {
   const navbarHover = {
     textDecoration: "none",
     color: "#fff",
-    padding: `0 ${15 + pd}px`,
+    padding: `0 ${10 + pd}px`,
     fontSize: `${fs}vw`,
     backgroundColor: "#dddddd66",
     borderRadius: "8px",
@@ -102,7 +103,7 @@ export function Landing() {
   const navbar = {
     textDecoration: "none",
     color: "#fff",
-    padding: `0 ${15 + pd}px`,
+    padding: `0 ${10 + pd}px`,
     fontSize: `${fs}vw`,
   };
 
@@ -138,8 +139,9 @@ export function Landing() {
   let carh = width - 400;
   if (carh < 0) carh = 0;
   carh = 400 + carh / 3.4;
-  console.log(carh);
+
   if (carh > 600) carh = height - 10;
+
   const Carousel_slides = {
     overflowY: "visible",
     // height: height.toString().concat("px"),
@@ -151,6 +153,7 @@ export function Landing() {
     paddingLeft: "10vw",
     height: `${carh}px`,
   };
+
   // .Carousel_slides_button:focus {
   //   outline: none;
   //   box-shadow: none;
@@ -158,7 +161,24 @@ export function Landing() {
   // .Carousel_slides_button:hover {
   //   cursor: pointer;
   // }
+  let parN = width / 10;
+  if (width < 600) {
+    parN -= 10;
+  }
 
+  const subHeading_text = {
+    marginTop: "auto",
+    marginBottom: "10vh",
+    fontSize: `${fs18}px`,
+    padding: "0 10vw",
+  };
+
+  let featureS = (width - 400) / 1300;
+  if (featureS < 0) featureS = 0;
+  featureS += 1.5;
+  if (featureS > 2.5) featureS = 2.5;
+
+  console.log(featureS);
   return (
     <Fragment>
       <div
@@ -189,7 +209,7 @@ export function Landing() {
         <img
           src={IMAGES.landing.aboutUs[0]}
           alt="logo"
-          style={{marginRight: "3vw", height: "3vw"}}
+          style={{marginRight: "3vw", height: "4vw"}}
         />
         <div
           style={{
@@ -234,7 +254,7 @@ export function Landing() {
             style={{
               ...Carousel_slides,
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
-              backgroundSize: `${width + 190}px auto`,
+              backgroundSize: `${width + 200}px auto`,
             }}
             key={index}
           >
@@ -253,7 +273,6 @@ export function Landing() {
           backgroundImage: `url(${IMAGES.landing.subheading})`,
           backgroundSize: `${width + 50}px`,
           position: "relative",
-          border: "1px solid red",
           height: `${carh - 160}px`,
         }}
       >
@@ -264,44 +283,46 @@ export function Landing() {
             left: 0,
             // marginLeft: "-300px",
           }}
-          color="#ff0"
+          // color="#ff0"
           width={`${width + 70}px`}
           // height={`${carh}px`}
           params={{
             particles: {
               number: {
-                value: width / 10,
+                value: parN,
+                max: -1,
+                density: {
+                  enable: false,
+                  area: 1200,
+                },
               },
               size: {
-                value: 2,
+                value: width < 600 ? 2 : 4,
               },
               color: {
-                value: "#aaa",
+                value: "#F00",
               },
-              shape: {
-                strole: {
-                  width: 0,
-                  color: "#555",
-                },
+              stroke: {
+                width: 0,
+                color: "#0F0",
               },
             },
             opacity: {
-              value: 0.1,
+              value: 0.4,
               random: false,
-              maximumValue: 0.3,
+              maximumValue: 0.6,
             },
           }}
         />
-        <div className="subHeading_text" style={{padding: "0 10vw"}}>
-          {HOME.subheading}
-        </div>
+        <div style={subHeading_text}>{HOME.subheading}</div>
       </div>
       <div
         id="features"
         style={{
-          fontSize: "2.5rem",
+          fontSize: `${featureS}rem`,
           color: "#595959",
           textAlign: "center",
+          // margin: "100px 0 50px 0",
           margin: "100px 0 50px 0",
           fontFamily: "Questrial, Sans-serif",
           fontWeight: 900,
