@@ -8,6 +8,7 @@ import Particles from 'react-particles-js';
 import { HOME } from '../../constant/const';
 import { IMAGES } from '../../image';
 import { FeatureCard } from './feature';
+import { getStyle } from './styles';
 
 export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN";
 export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP";
@@ -24,9 +25,14 @@ export function Landing() {
 
   const [navIndex, setNavIndex] = useState(-1);
   const updateDimensions = () => {
-    setWidth(window.innerWidth);
+    setWidth(window.innerWidth - 20);
     setHeight(window.innerHeight);
   };
+
+  useEffect(() => {
+    setWidth(window.innerWidth - 20);
+  }, []);
+
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
@@ -48,111 +54,23 @@ export function Landing() {
     {label: "Contact", link: "#contact"},
   ];
 
-  let fs18 = width - 330;
-  if (fs18 < 0) {
-    fs18 = 20;
-  } else {
-    fs18 = 12 + fs18 / 20;
-  }
-  if (fs18 > 32) {
-    fs18 = 32;
-  }
+  const Carousel_slides_text = getStyle([
+    width,
+    height,
+    "Carousel_slides_text",
+  ]);
+  const subHeading_text = getStyle([width, height, "subHeading_text"]);
+  const navbarHover = getStyle([width, height, "navbarHover"]);
+  const navbar = getStyle([width, height, "navbar"]);
+  const Carousel_slides_button = getStyle([
+    width,
+    height,
+    "Carousel_slides_button",
+  ]);
+  const Carousel_slides = getStyle([width, height, "Carousel_slides"]);
 
-  let csw = width - 100;
-  if (csw < 200) {
-    csw = 150;
-  } else {
-    csw = 150 + csw / 5;
-  }
-  if (csw > 440) csw = 440;
-
-  const Carousel_slides_text = {
-    color: "white",
-    display: "flex",
-    flexDirection: "column",
-    fontSize: `${fs18}px`,
-    fontFamily: "Questrial, Sans-serif",
-    fontWeight: "500",
-    height: "100%",
-    justifyContent: "center",
-    // marginBottom: "35vh",
-    // marginBottom: "25vh",
-    textShadow: "2px 2px 4px #0009",
-    marginRight: "30vw",
-    width: `${csw}px`,
-  };
-
-  let fs = width - 1120;
-  if (fs < 0) {
-    fs = 3;
-  } else {
-    fs = 1.5;
-  }
-  let pd = (width - 880) / 20;
-  if (pd < 0) pd = 0;
-
-  const navbarHover = {
-    textDecoration: "none",
-    color: "#fff",
-    padding: `0 ${10 + pd}px`,
-    fontSize: `${fs}vw`,
-    backgroundColor: "#dddddd66",
-    borderRadius: "8px",
-    transition: "background-color 0.2s ease",
-  };
-  const navbar = {
-    textDecoration: "none",
-    color: "#fff",
-    padding: `0 ${10 + pd}px`,
-    fontSize: `${fs}vw`,
-  };
-
-  let bh = width - 330;
-  if (bh < 0) bh = 0;
-  bh = 29 + bh / 140;
-  if (bh > 39) bh = 39;
-
-  let bpd = (width - 400) / 170;
-  if (bpd < 0) bpd = 0;
-  if (bpd > 8) bpd = 8;
-
-  let bfs = bpd / 4;
-  if (bfs > 3) bfs = 3;
-
-  const Carousel_slides_button = {
-    alignSelf: "flex-start",
-    height: `${bh}px`,
-    width: "auto",
-    borderRadius: `${10 + bpd}px`,
-    border: "none",
-    marginTop: "30px",
-    marginRight: "10%",
-    padding: `0px ${16 + bpd}px`,
-    backgroundColor: "#fd0000",
-    color: "white",
-    fontSize: `${12 + bpd}px`,
-    fontWeight: "bold",
-    fontFamily: "Questrial, Sans-serif",
-    textShadow: "2px 2px 4px #0009",
-  };
-
-  let carh = width - 400;
-  if (carh < 0) carh = 0;
-  carh = 400 + carh / 3.4;
-
-  if (carh > 600) carh = height - 10;
-
-  const Carousel_slides = {
-    overflowY: "visible",
-    // height: height.toString().concat("px"),
-    display: "flex",
-    flexDirection: "column",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    paddingLeft: "10vw",
-    height: `${carh}px`,
-  };
+  // let bfs = bpd / 4;
+  // if (bfs > 3) bfs = 3;
 
   // .Carousel_slides_button:focus {
   //   outline: none;
@@ -161,24 +79,91 @@ export function Landing() {
   // .Carousel_slides_button:hover {
   //   cursor: pointer;
   // }
+
+  let featureS = (width - 400) / 1100;
+  if (featureS < 0) {
+    featureS = 0;
+  }
+  featureS += 1.5;
+  if (featureS > 2.5) featureS = 2.5;
+  let featureS2 = (featureS - 1.5) * 1.75 + 0.8;
+  if (featureS2 > 2.5) featureS2 = 2.5;
+
+  let carh = width - 400;
+  if (carh < 0) carh = 0;
+  carh = 400 + carh / 3.4;
+  if (carh > 600) carh = height - 10;
+  let parD = carh - 400;
+  if (parD < 0) parD = 0;
+  parD = parD / 15;
+  if (parD > 10) parD = 10;
+
+  const featureContainer = {
+    width: "45%",
+    // todo width: "36%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    margin: "20px 0",
+  };
+
   let parN = width / 10;
   if (width < 600) {
     parN -= 10;
   }
 
-  const subHeading_text = {
-    marginTop: "auto",
-    marginBottom: "10vh",
-    fontSize: `${fs18}px`,
-    padding: "0 10vw",
+  let iw = (width - 400) / 32;
+  if (iw < 0) iw = 0;
+  iw += 25;
+  if (iw > 50) console.log(iw);
+
+  const featureIconStyle = {
+    width: `${iw}px`,
+    height: `${iw}px`,
+    margin: "15px",
   };
 
-  let featureS = (width - 400) / 1300;
-  if (featureS < 0) featureS = 0;
-  featureS += 1.5;
-  if (featureS > 2.5) featureS = 2.5;
+  const featureTitleStyle = {
+    fontWeight: 900,
+    color: "#595959",
+    fontSize: `${featureS2}rem`,
+    marginBottom: "20px",
+    fontFamily: "Questrial, Sans-serif",
+    textAlign: "center",
+  };
+  let feafs = featureS / 2.3;
+  if (feafs < 0.6) feafs = 0.6;
+  if (feafs > 1) feafs = 1;
 
-  console.log(featureS);
+  const featureTextStyle = {
+    fontWeight: "normal",
+    color: "#7a7a7a",
+    fontSize: `${feafs}rem`,
+    padding: "0 20px",
+    lineHeight: 1.5,
+    textAlign: "center",
+  };
+
+  const topHeading = {
+    fontSize: `${featureS}rem`,
+    color: "#595959",
+    textAlign: "center",
+    // margin: "100px 0 50px 0",
+    margin: width < 600 ? "50px 0 25px 0" : "100px 0 50px 0",
+    fontFamily: "Questrial, Sans-serif",
+    fontWeight: 900,
+  };
+
+  const our_clients_content = {
+    display: "flex",
+    height: "80px",
+    // height: "300px",
+    columnGap: "24vw",
+    marginBottom: "50px",
+    // marginBottom: "80px",
+    alignItems: "center",
+  };
+
   return (
     <Fragment>
       <div
@@ -232,6 +217,7 @@ export function Landing() {
           </a>
         ))}
       </div>
+
       <Carousel
         style={{height: `${carh}px`}}
         autoplay={false}
@@ -254,7 +240,7 @@ export function Landing() {
             style={{
               ...Carousel_slides,
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
-              backgroundSize: `${width + 200}px auto`,
+              backgroundSize: `${width + 100}px auto`,
             }}
             key={index}
           >
@@ -271,9 +257,9 @@ export function Landing() {
         className="subHeading"
         style={{
           backgroundImage: `url(${IMAGES.landing.subheading})`,
-          backgroundSize: `${width + 50}px`,
+          backgroundSize: `${width}px`,
           position: "relative",
-          height: `${carh - 160}px`,
+          height: `${carh - 200}px`,
         }}
       >
         <Particles
@@ -281,11 +267,9 @@ export function Landing() {
             backgroundColor: "#0000",
             position: "absolute",
             left: 0,
-            // marginLeft: "-300px",
           }}
-          // color="#ff0"
-          width={`${width + 70}px`}
-          // height={`${carh}px`}
+          width={`${width}px`}
+          height={`${carh - 200 - parD}px`}
           params={{
             particles: {
               number: {
@@ -316,18 +300,7 @@ export function Landing() {
         />
         <div style={subHeading_text}>{HOME.subheading}</div>
       </div>
-      <div
-        id="features"
-        style={{
-          fontSize: `${featureS}rem`,
-          color: "#595959",
-          textAlign: "center",
-          // margin: "100px 0 50px 0",
-          margin: "100px 0 50px 0",
-          fontFamily: "Questrial, Sans-serif",
-          fontWeight: 900,
-        }}
-      >
+      <div id="features" style={topHeading}>
         Our Features
       </div>
       <div
@@ -336,32 +309,44 @@ export function Landing() {
           flexDirection: "row",
           flexWrap: "wrap",
           justifyContent: "center",
+          paddingBottom: "30px",
         }}
       >
         {HOME.features.map((item, index) => (
-          <FeatureCard key={index} item={item} />
+          <FeatureCard
+            key={index}
+            item={item}
+            containerStyle={featureContainer}
+            titleStyle={featureTitleStyle}
+            textStyle={featureTextStyle}
+            iconStyle={featureIconStyle}
+          />
         ))}
       </div>
       <div className="our_clients_container">
-        <div id="clients" className="our_clients_text">
+        <div id="clients" style={topHeading}>
           {HOME.ourClients}
         </div>
-        <div className="our_clients_content">
+        <div style={our_clients_content}>
           {IMAGES.landing.clients.map((src, index) => (
-            <img key={index} src={src} alt={src} />
+            // <img key={index} src={src} alt={src} width="200px" />
+            <img key={index} src={src} alt={src} width="100px" />
           ))}
         </div>
       </div>
-      <div className="about_us_container" style={{backgroundColor: "#f9f9f9"}}>
+      {/* <div className="about_us_container" style={{backgroundColor: "#f9f9f9"}}> */}
+      <div style={{...topHeading, backgroundColor: "#f9f9f9"}}>
         <div id="about" className="our_clients_text">
           {HOME.aboutUs}
         </div>
         <div className="about_us_content">
           {IMAGES.landing.aboutUs.map((src, index) => (
             <div key={index} className="about_us_images">
-              <img src={src} alt={src}></img>
+              {/* <img src={src} alt={src}></img> */}
+              <img src={src} alt={src} width="100px"></img>
               <div className="about_us_text">{HOME.aboutUsLogoName[index]}</div>
-              <div className="about_us_description">
+              {/* <div className="about_us_description"> */}
+              <div style={featureTextStyle}>
                 {HOME.aboutUsDescription[index]}
               </div>
             </div>

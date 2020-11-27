@@ -25,13 +25,7 @@
 .ver50 {
   margin-bottom: 60px;
 }
-.our_clients_content {
-  display: flex;
-  height: 300px;
-  column-gap: 24vw;
-  margin-bottom: 80px;
-  align-items: center;
-}
+
 .about_us_content {
   display: flex;
   align-items: center;
