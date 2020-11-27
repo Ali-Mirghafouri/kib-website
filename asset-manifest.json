@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/kib-website/static/css/main.3f9c47c4.chunk.css",
-    "main.js": "/kib-website/static/js/main.6fda69da.chunk.js",
-    "main.js.map": "/kib-website/static/js/main.6fda69da.chunk.js.map",
-    "runtime-main.js": "/kib-website/static/js/runtime-main.4e46218b.js",
-    "runtime-main.js.map": "/kib-website/static/js/runtime-main.4e46218b.js.map",
-    "static/js/2.46312518.chunk.js": "/kib-website/static/js/2.46312518.chunk.js",
-    "static/js/2.46312518.chunk.js.map": "/kib-website/static/js/2.46312518.chunk.js.map",
-    "static/js/3.00651055.chunk.js": "/kib-website/static/js/3.00651055.chunk.js",
-    "static/js/3.00651055.chunk.js.map": "/kib-website/static/js/3.00651055.chunk.js.map",
+    "main.css": "/kib-website/static/css/main.7cba996e.chunk.css",
+    "main.js": "/kib-website/static/js/main.71c67a5d.chunk.js",
+    "main.js.map": "/kib-website/static/js/main.71c67a5d.chunk.js.map",
+    "runtime-main.js": "/kib-website/static/js/runtime-main.5d986cfc.js",
+    "runtime-main.js.map": "/kib-website/static/js/runtime-main.5d986cfc.js.map",
+    "static/js/2.c34ff803.chunk.js": "/kib-website/static/js/2.c34ff803.chunk.js",
+    "static/js/2.c34ff803.chunk.js.map": "/kib-website/static/js/2.c34ff803.chunk.js.map",
+    "static/js/3.c8aefd60.chunk.js": "/kib-website/static/js/3.c8aefd60.chunk.js",
+    "static/js/3.c8aefd60.chunk.js.map": "/kib-website/static/js/3.c8aefd60.chunk.js.map",
     "index.html": "/kib-website/index.html",
-    "static/css/main.3f9c47c4.chunk.css.map": "/kib-website/static/css/main.3f9c47c4.chunk.css.map",
-    "static/js/2.46312518.chunk.js.LICENSE.txt": "/kib-website/static/js/2.46312518.chunk.js.LICENSE.txt",
+    "static/css/main.7cba996e.chunk.css.map": "/kib-website/static/css/main.7cba996e.chunk.css.map",
+    "static/js/2.c34ff803.chunk.js.LICENSE.txt": "/kib-website/static/js/2.c34ff803.chunk.js.LICENSE.txt",
     "static/media/phone2.c06a828f.jpg": "/kib-website/static/media/phone2.c06a828f.jpg",
     "static/media/regovLogo.a16351d6.png": "/kib-website/static/media/regovLogo.a16351d6.png",
     "static/media/slide1.dc10417d.jpg": "/kib-website/static/media/slide1.dc10417d.jpg",
@@ -19,9 +19,9 @@
     "static/media/slide3.2eb2f26d.jpg": "/kib-website/static/media/slide3.2eb2f26d.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4e46218b.js",
-    "static/js/2.46312518.chunk.js",
-    "static/css/main.3f9c47c4.chunk.css",
-    "static/js/main.6fda69da.chunk.js"
+    "static/js/runtime-main.5d986cfc.js",
+    "static/js/2.c34ff803.chunk.js",
+    "static/css/main.7cba996e.chunk.css",
+    "static/js/main.71c67a5d.chunk.js"
   ]
 }
