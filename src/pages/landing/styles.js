@@ -18,6 +18,16 @@ export const getStyle = (props) => {
   } else {
     fs = 1.5;
   }
+  let featureS = (width - 400) / 1100;
+  if (featureS < 0) {
+    featureS = 0;
+  }
+  featureS += 1.5;
+  if (featureS > 2.5) featureS = 2.5;
+
+  let featureS2 = (featureS - 1.5) * 1.75 + 0.8;
+  if (featureS2 > 2.5) featureS2 = 2.5;
+
   switch (type) {
     case "Carousel_slides_text":
       let csw = width - 100;
@@ -60,6 +70,7 @@ export const getStyle = (props) => {
         borderRadius: "8px",
         transition: "background-color 0.2s ease",
       };
+
     case "navbar":
       return {
         textDecoration: "none",
@@ -67,12 +78,12 @@ export const getStyle = (props) => {
         padding: `0 ${10 + pd}px`,
         fontSize: `${fs}vw`,
       };
+
     case "Carousel_slides_button":
       let bh = width - 330;
       if (bh < 0) bh = 0;
       bh = 29 + bh / 140;
       if (bh > 39) bh = 39;
-
       let bpd = (width - 400) / 170;
       if (bpd < 0) bpd = 0;
       if (bpd > 8) bpd = 8;
@@ -92,6 +103,7 @@ export const getStyle = (props) => {
         fontFamily: "Questrial, Sans-serif",
         textShadow: "2px 2px 4px #0009",
       };
+
     case "Carousel_slides":
       let carh = width - 400;
       if (carh < 0) carh = 0;
@@ -107,6 +119,74 @@ export const getStyle = (props) => {
         backgroundSize: "cover",
         paddingLeft: "10vw",
         height: `${carh}px`,
+      };
+
+    case "featureTitleStyle":
+      return {
+        fontWeight: 900,
+        color: "#595959",
+        fontSize: `${featureS2}rem`,
+        marginBottom: "20px",
+        fontFamily: "Questrial, Sans-serif",
+        textAlign: "center",
+      };
+
+    case "featureTextStyle":
+      let feafs = featureS / 2.3;
+      if (feafs < 0.6) feafs = 0.6;
+      if (feafs > 1) feafs = 1;
+      return {
+        fontWeight: "normal",
+        color: "#7a7a7a",
+        fontSize: `${feafs}rem`,
+        padding: "0 20px",
+        lineHeight: 1.5,
+        textAlign: "center",
+      };
+    case "topHeading":
+      return {
+        fontSize: `${featureS}rem`,
+        color: "#595959",
+        textAlign: "center",
+        margin: width < 600 ? "30px 0 5px 0" : "100px 0 50px 0",
+        fontFamily: "Questrial, Sans-serif",
+        fontWeight: 900,
+      };
+
+    case "featureIconStyle":
+      let iw = (width - 400) / 32;
+      if (iw < 0) iw = 0;
+      iw += 25;
+      return {
+        width: `${iw}px`,
+        height: `${iw}px`,
+        margin: "15px",
+      };
+
+    case "our_clients_content":
+      return {
+        display: "flex",
+        columnGap: "24vw",
+        marginBottom: "70px",
+        alignItems: "center",
+      };
+
+    case "clientImageWidth":
+      let clientImageWidth = width - 400;
+      if (clientImageWidth < 0) clientImageWidth = 0;
+      clientImageWidth += clientImageWidth / 8;
+      if (clientImageWidth > 200) clientImageWidth = 200;
+      if (clientImageWidth < 100) clientImageWidth = 100;
+      return clientImageWidth;
+    case "about_us_text":
+      return {
+        textAlign: "center",
+        color: "#595959",
+        fontFamily: "Questrial, Sans-serif",
+        fontWeight: 900,
+        fontSize: `${featureS2 + 0.05}rem`,
+        marginTop: "30px",
+        marginBottom: "2vh",
       };
     default:
       return {};

@@ -60,15 +60,7 @@
   align-items: center;
   width: 50%;
 }
-.about_us_text {
-  text-align: center;
-  color: #595959;
-  font-family: "Questrial", Sans-serif;
-  font-weight: 900;
-  font-size: 1.75rem;
-  margin-top: 30px;
-  margin-bottom: 2vh;
-}
+
 .about_us_description {
   text-align: center;
   padding: 0 50px;

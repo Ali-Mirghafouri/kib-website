@@ -39,7 +39,6 @@ export function Landing() {
   }, []);
 
   // const handleScroll = () => {
-  //   // console.log(window.pageYOffset);
   // };
 
   // useEffect(() => {
@@ -68,6 +67,13 @@ export function Landing() {
     "Carousel_slides_button",
   ]);
   const Carousel_slides = getStyle([width, height, "Carousel_slides"]);
+  const featureTitleStyle = getStyle([width, height, "featureTitleStyle"]);
+  const featureTextStyle = getStyle([width, height, "featureTextStyle"]);
+  const topHeading = getStyle([width, height, "topHeading"]);
+  const featureIconStyle = getStyle([width, height, "featureIconStyle"]);
+  const our_clients_content = getStyle([width, height, "our_clients_content"]);
+  const clientImageWidth = getStyle([width, height, "clientImageWidth"]);
+  const about_us_text = getStyle([width, height, "about_us_text"]);
 
   // let bfs = bpd / 4;
   // if (bfs > 3) bfs = 3;
@@ -79,15 +85,6 @@ export function Landing() {
   // .Carousel_slides_button:hover {
   //   cursor: pointer;
   // }
-
-  let featureS = (width - 400) / 1100;
-  if (featureS < 0) {
-    featureS = 0;
-  }
-  featureS += 1.5;
-  if (featureS > 2.5) featureS = 2.5;
-  let featureS2 = (featureS - 1.5) * 1.75 + 0.8;
-  if (featureS2 > 2.5) featureS2 = 2.5;
 
   let carh = width - 400;
   if (carh < 0) carh = 0;
@@ -111,58 +108,6 @@ export function Landing() {
   if (width < 600) {
     parN -= 10;
   }
-
-  let iw = (width - 400) / 32;
-  if (iw < 0) iw = 0;
-  iw += 25;
-  if (iw > 50) console.log(iw);
-
-  const featureIconStyle = {
-    width: `${iw}px`,
-    height: `${iw}px`,
-    margin: "15px",
-  };
-
-  const featureTitleStyle = {
-    fontWeight: 900,
-    color: "#595959",
-    fontSize: `${featureS2}rem`,
-    marginBottom: "20px",
-    fontFamily: "Questrial, Sans-serif",
-    textAlign: "center",
-  };
-  let feafs = featureS / 2.3;
-  if (feafs < 0.6) feafs = 0.6;
-  if (feafs > 1) feafs = 1;
-
-  const featureTextStyle = {
-    fontWeight: "normal",
-    color: "#7a7a7a",
-    fontSize: `${feafs}rem`,
-    padding: "0 20px",
-    lineHeight: 1.5,
-    textAlign: "center",
-  };
-
-  const topHeading = {
-    fontSize: `${featureS}rem`,
-    color: "#595959",
-    textAlign: "center",
-    // margin: "100px 0 50px 0",
-    margin: width < 600 ? "50px 0 25px 0" : "100px 0 50px 0",
-    fontFamily: "Questrial, Sans-serif",
-    fontWeight: 900,
-  };
-
-  const our_clients_content = {
-    display: "flex",
-    height: "80px",
-    // height: "300px",
-    columnGap: "24vw",
-    marginBottom: "50px",
-    // marginBottom: "80px",
-    alignItems: "center",
-  };
 
   return (
     <Fragment>
@@ -324,27 +269,41 @@ export function Landing() {
         ))}
       </div>
       <div className="our_clients_container">
-        <div id="clients" style={topHeading}>
+        <div
+          id="clients"
+          style={{
+            ...topHeading,
+            marginBottom: "50px",
+          }}
+        >
           {HOME.ourClients}
         </div>
         <div style={our_clients_content}>
           {IMAGES.landing.clients.map((src, index) => (
-            // <img key={index} src={src} alt={src} width="200px" />
-            <img key={index} src={src} alt={src} width="100px" />
+            <img
+              key={index}
+              src={src}
+              alt={src}
+              width={`${clientImageWidth}px`}
+            />
           ))}
         </div>
       </div>
-      {/* <div className="about_us_container" style={{backgroundColor: "#f9f9f9"}}> */}
       <div style={{...topHeading, backgroundColor: "#f9f9f9"}}>
-        <div id="about" className="our_clients_text">
+        <div id="about" style={topHeading}>
           {HOME.aboutUs}
         </div>
         <div className="about_us_content">
           {IMAGES.landing.aboutUs.map((src, index) => (
             <div key={index} className="about_us_images">
               {/* <img src={src} alt={src}></img> */}
-              <img src={src} alt={src} width="100px"></img>
-              <div className="about_us_text">{HOME.aboutUsLogoName[index]}</div>
+              <img
+                src={src}
+                alt={src}
+                width={`${clientImageWidth / 2}px`}
+                height={`${clientImageWidth / 2}px`}
+              ></img>
+              <div style={about_us_text}>{HOME.aboutUsLogoName[index]}</div>
               {/* <div className="about_us_description"> */}
               <div style={featureTextStyle}>
                 {HOME.aboutUsDescription[index]}
@@ -353,14 +312,15 @@ export function Landing() {
           ))}
         </div>
       </div>
-      <div className="about_us_container pad200" ref={contacts}>
-        <div id="contact" className="our_clients_text ver50">
+      <div className="about_us_container" ref={contacts}>
+        {/* <div id="contact" className="our_clients_text ver50"> */}
+        <div id="contact" style={{...topHeading, marginBottom: "50px"}}>
           Contact Us
         </div>
         <input
           placeholder="Name"
           style={{
-            width: "100%",
+            width: "96%",
             height: 40,
             padding: "0 20px",
             boxSizing: "border-box",
@@ -371,8 +331,9 @@ export function Landing() {
         <div
           style={{
             display: "flex",
+            width: "96%",
             flexDirection: "row",
-            width: "100%",
+
             margin: "10px 0",
           }}
         >
@@ -381,16 +342,24 @@ export function Landing() {
             style={{
               flex: 1,
               height: 40,
+              minWidth: "100px",
               boxSizing: "border-box",
               padding: "0 20px",
               fontFamily: "Questrial, Sans-serif",
               fontWeight: 600,
             }}
           />
-          <div style={{width: "20px", height: "1px"}} />
+          <div
+            style={{
+              height: "1px",
+              boxSizing: "border-box",
+              width: "20px",
+            }}
+          />
           <input
             placeholder="Mobile"
             style={{
+              minWidth: "100px",
               flex: 1,
               height: 40,
               boxSizing: "border-box",
@@ -405,7 +374,7 @@ export function Landing() {
           placeholder="Message"
           style={{
             resize: "none",
-            width: "100%",
+            width: "96%",
             height: 120,
             boxSizing: "border-box",
             padding: "20px",
@@ -417,7 +386,7 @@ export function Landing() {
         <input
           type="button"
           style={{
-            width: "100%",
+            width: "96%",
             height: 40,
             marginTop: "20px",
             backgroundColor: "#fd0000",
