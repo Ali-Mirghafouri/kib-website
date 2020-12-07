@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 650px;
+  /* height: 68.7vh; */
   background-color: #fff;
 }
 .pad50 {

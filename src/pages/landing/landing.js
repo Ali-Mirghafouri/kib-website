@@ -1,42 +1,42 @@
-import './landing.css';
+import "./landing.css"
 
-import Carousel from 'nuka-carousel';
-import React, { Fragment, useEffect, useRef, useState } from 'react';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import Particles from 'react-particles-js';
+import Carousel from "nuka-carousel"
+import React, {Fragment, useEffect, useRef, useState} from "react"
+import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai"
+import Particles from "react-particles-js"
 
-import { HOME } from '../../constant/const';
-import { IMAGES } from '../../image';
-import { FeatureCard } from './feature';
-import { getStyle } from './styles';
+import {HOME} from "../../constant/const"
+import {IMAGES} from "../../image"
+import {FeatureCard} from "./feature"
+import {getStyle} from "./styles"
 
-export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN";
-export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP";
-export const SCROLL_DIRECTION_NONE = "SCROLL_DIRECTION_NONE";
+export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN"
+export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP"
+export const SCROLL_DIRECTION_NONE = "SCROLL_DIRECTION_NONE"
 
 export function Landing() {
-  const contacts = useRef();
+  const contacts = useRef()
   const executeScroll = () => {
-    contacts.current.scrollIntoView({behavior: "smooth"});
-  };
+    contacts.current.scrollIntoView({behavior: "smooth"})
+  }
 
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth)
+  const [height, setHeight] = useState(window.innerHeight)
 
-  const [navIndex, setNavIndex] = useState(-1);
+  const [navIndex, setNavIndex] = useState(-1)
   const updateDimensions = () => {
-    setWidth(window.innerWidth - 20);
-    setHeight(window.innerHeight);
-  };
+    setWidth(window.innerWidth - 20)
+    setHeight(window.innerHeight)
+  }
 
   useEffect(() => {
-    setWidth(window.innerWidth - 20);
-  }, []);
+    setWidth(window.innerWidth - 20)
+  }, [])
 
   useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+    window.addEventListener("resize", updateDimensions)
+    return () => window.removeEventListener("resize", updateDimensions)
+  }, [])
 
   // const handleScroll = () => {
   // };
@@ -51,29 +51,25 @@ export function Landing() {
     {label: "Clients", link: "#clients"},
     {label: "About", link: "#about"},
     {label: "Contact", link: "#contact"},
-  ];
+  ]
 
-  const Carousel_slides_text = getStyle([
-    width,
-    height,
-    "Carousel_slides_text",
-  ]);
-  const subHeading_text = getStyle([width, height, "subHeading_text"]);
-  const navbarHover = getStyle([width, height, "navbarHover"]);
-  const navbar = getStyle([width, height, "navbar"]);
-  const Carousel_slides_button = getStyle([
-    width,
-    height,
-    "Carousel_slides_button",
-  ]);
-  const Carousel_slides = getStyle([width, height, "Carousel_slides"]);
-  const featureTitleStyle = getStyle([width, height, "featureTitleStyle"]);
-  const featureTextStyle = getStyle([width, height, "featureTextStyle"]);
-  const topHeading = getStyle([width, height, "topHeading"]);
-  const featureIconStyle = getStyle([width, height, "featureIconStyle"]);
-  const our_clients_content = getStyle([width, height, "our_clients_content"]);
-  const clientImageWidth = getStyle([width, height, "clientImageWidth"]);
-  const about_us_text = getStyle([width, height, "about_us_text"]);
+  const Carousel_slides_text = getStyle([width, height, "Carousel_slides_text"])
+  const subHeading_text = getStyle([width, height, "subHeading_text"])
+  const navbarHover = getStyle([width, height, "navbarHover"])
+  const navbar = getStyle([width, height, "navbar"])
+  const Carousel_slides_button = getStyle([width, height, "Carousel_slides_button"])
+  const Carousel_slides = getStyle([width, height, "Carousel_slides"])
+  const featureTitleStyle = getStyle([width, height, "featureTitleStyle"])
+  const featureTextStyle = getStyle([width, height, "featureTextStyle"])
+  const topHeading = getStyle([width, height, "topHeading"])
+  const featureIconStyle = getStyle([width, height, "featureIconStyle"])
+  const our_clients_content = getStyle([width, height, "our_clients_content"])
+  const clientImageWidth = getStyle([width, height, "clientImageWidth"])
+  const about_us_text = getStyle([width, height, "about_us_text"])
+  const contact_us_button = getStyle([width, height, "contact_us_button"])
+  const contact_us_input = getStyle([width, height, "contact_us_input"])
+  const contact_us_textarea = getStyle([width, height, "contact_us_textarea"])
+  const about_us_container = getStyle([width, height, "about_us_container"])
 
   // let bfs = bpd / 4;
   // if (bfs > 3) bfs = 3;
@@ -86,14 +82,14 @@ export function Landing() {
   //   cursor: pointer;
   // }
 
-  let carh = width - 400;
-  if (carh < 0) carh = 0;
-  carh = 400 + carh / 3.4;
-  if (carh > 600) carh = height - 10;
-  let parD = carh - 400;
-  if (parD < 0) parD = 0;
-  parD = parD / 15;
-  if (parD > 10) parD = 10;
+  let carh = width - 400
+  if (carh < 0) carh = 0
+  carh = 400 + carh / 3.4
+  if (carh > 600) carh = height - 10
+  let parD = carh - 400
+  if (parD < 0) parD = 0
+  parD = parD / 15
+  if (parD > 10) parD = 10
 
   const featureContainer = {
     width: "45%",
@@ -102,11 +98,11 @@ export function Landing() {
     flexDirection: "column",
     alignItems: "center",
     margin: "20px 0",
-  };
+  }
 
-  let parN = width / 10;
+  let parN = width / 10
   if (width < 600) {
-    parN -= 10;
+    parN -= 10
   }
 
   return (
@@ -118,8 +114,7 @@ export function Landing() {
           left: 0,
           color: "red",
           zIndex: 10,
-        }}
-      >
+        }}>
         {width}x{height}
       </div>
       <div
@@ -134,8 +129,7 @@ export function Landing() {
           fontWeight: 500,
           alignItems: "center",
           zIndex: "1000",
-        }}
-      >
+        }}>
         <img
           src={IMAGES.landing.aboutUs[0]}
           alt="logo"
@@ -146,8 +140,7 @@ export function Landing() {
             color: "rgb(152, 240, 73)",
             fontWeight: "bold",
             fontSize: "3vw",
-          }}
-        >
+          }}>
           RICHA
         </div>
         {navbarLabels.map((item, index) => (
@@ -156,8 +149,7 @@ export function Landing() {
             href={item.link}
             key={index}
             onMouseEnter={() => setNavIndex(index)}
-            onMouseLeave={() => setNavIndex(-1)}
-          >
+            onMouseLeave={() => setNavIndex(-1)}>
             {item.label}
           </a>
         ))}
@@ -178,8 +170,7 @@ export function Landing() {
         )}
         renderCenterRightControls={({nextSlide}) => (
           <AiOutlineRight color="white" size="40px" onClick={nextSlide} />
-        )}
-      >
+        )}>
         {HOME.carousel.map((text, index) => (
           <div
             style={{
@@ -187,8 +178,7 @@ export function Landing() {
               backgroundImage: `url(${IMAGES.landing.slides[index]})`,
               backgroundSize: `${width + 100}px auto`,
             }}
-            key={index}
-          >
+            key={index}>
             <div style={Carousel_slides_text}>
               {text}
               <button style={Carousel_slides_button} onClick={executeScroll}>
@@ -205,8 +195,7 @@ export function Landing() {
           backgroundSize: `${width}px`,
           position: "relative",
           height: `${carh - 200}px`,
-        }}
-      >
+        }}>
         <Particles
           style={{
             backgroundColor: "#0000",
@@ -255,8 +244,7 @@ export function Landing() {
           flexWrap: "wrap",
           justifyContent: "center",
           paddingBottom: "30px",
-        }}
-      >
+        }}>
         {HOME.features.map((item, index) => (
           <FeatureCard
             key={index}
@@ -274,18 +262,12 @@ export function Landing() {
           style={{
             ...topHeading,
             marginBottom: "50px",
-          }}
-        >
+          }}>
           {HOME.ourClients}
         </div>
         <div style={our_clients_content}>
           {IMAGES.landing.clients.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={src}
-              width={`${clientImageWidth}px`}
-            />
+            <img key={index} src={src} alt={src} width={`${clientImageWidth}px`} />
           ))}
         </div>
       </div>
@@ -296,36 +278,27 @@ export function Landing() {
         <div className="about_us_content">
           {IMAGES.landing.aboutUs.map((src, index) => (
             <div key={index} className="about_us_images">
-              {/* <img src={src} alt={src}></img> */}
               <img
                 src={src}
                 alt={src}
                 width={`${clientImageWidth / 2}px`}
-                height={`${clientImageWidth / 2}px`}
-              ></img>
+                height={`${clientImageWidth / 2}px`}></img>
               <div style={about_us_text}>{HOME.aboutUsLogoName[index]}</div>
-              {/* <div className="about_us_description"> */}
-              <div style={featureTextStyle}>
-                {HOME.aboutUsDescription[index]}
-              </div>
+              <div style={featureTextStyle}>{HOME.aboutUsDescription[index]}</div>
             </div>
           ))}
         </div>
       </div>
-      <div className="about_us_container" ref={contacts}>
-        {/* <div id="contact" className="our_clients_text ver50"> */}
+      <div style={about_us_container} ref={contacts}>
         <div id="contact" style={{...topHeading, marginBottom: "50px"}}>
           Contact Us
         </div>
         <input
           placeholder="Name"
           style={{
+            ...contact_us_input,
             width: "96%",
-            height: 40,
-            padding: "0 20px",
-            boxSizing: "border-box",
-            fontFamily: "Questrial, Sans-serif",
-            fontWeight: 600,
+            flex: "none",
           }}
         />
         <div
@@ -333,75 +306,14 @@ export function Landing() {
             display: "flex",
             width: "96%",
             flexDirection: "row",
-
             margin: "10px 0",
-          }}
-        >
-          <input
-            placeholder="Email"
-            style={{
-              flex: 1,
-              height: 40,
-              minWidth: "100px",
-              boxSizing: "border-box",
-              padding: "0 20px",
-              fontFamily: "Questrial, Sans-serif",
-              fontWeight: 600,
-            }}
-          />
-          <div
-            style={{
-              height: "1px",
-              boxSizing: "border-box",
-              width: "20px",
-            }}
-          />
-          <input
-            placeholder="Mobile"
-            style={{
-              minWidth: "100px",
-              flex: 1,
-              height: 40,
-              boxSizing: "border-box",
-              padding: "0 20px",
-              fontFamily: "Questrial, Sans-serif",
-              fontWeight: 600,
-            }}
-          />
+          }}>
+          <input placeholder="Email" style={{...contact_us_input, marginRight: "20px"}} />
+          <input placeholder="Mobile" style={contact_us_input} />
         </div>
-        <textarea
-          className="textarea"
-          placeholder="Message"
-          style={{
-            resize: "none",
-            width: "96%",
-            height: 120,
-            boxSizing: "border-box",
-            padding: "20px",
-            textAlign: "start",
-            fontFamily: "Questrial, Sans-serif",
-            fontWeight: 600,
-          }}
-        />
-        <input
-          type="button"
-          style={{
-            width: "96%",
-            height: 40,
-            marginTop: "20px",
-            backgroundColor: "#fd0000",
-            border: "none",
-            borderRadius: "4px",
-            outline: "none",
-            color: "#FFF",
-            cursor: "pointer",
-            fontFamily: "Questrial, Sans-serif",
-            fontSize: "1rem",
-            fontWeight: 600,
-          }}
-          value="Send"
-        />
+        <textarea className="textarea" placeholder="Message" style={contact_us_textarea} />
+        <input type="button" style={contact_us_button} value="Send" />
       </div>
     </Fragment>
-  );
+  )
 }
