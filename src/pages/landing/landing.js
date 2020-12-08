@@ -189,7 +189,7 @@ export function Landing() {
         className="subHeading"
         style={{
           backgroundImage: `url(${IMAGES.landing.subheading})`,
-          backgroundSize: `${width}px`,
+          backgroundSize: "cover",
           position: "relative",
           height: `${carh - 200}px`,
         }}>
