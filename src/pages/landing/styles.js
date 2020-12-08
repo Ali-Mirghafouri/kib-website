@@ -164,7 +164,7 @@ export const getStyle = (props) => {
     case "our_clients_content":
       return {
         display: "flex",
-        columnGap: "24vw",
+        columnGap: "25vw",
         marginBottom: "70px",
         alignItems: "center",
       }
@@ -189,7 +189,7 @@ export const getStyle = (props) => {
 
     case "contact_us_button":
       return {
-        width: "96%",
+        width: "100%",
         height: 40,
         marginTop: "20px",
         backgroundColor: "#fd0000",
@@ -205,8 +205,10 @@ export const getStyle = (props) => {
     case "contact_us_input":
       return {
         minWidth: "100px",
+        width: "100%",
         flex: 1,
-        height: 40,
+        minHeight: "40px",
+        height: "40px",
         boxSizing: "border-box",
         padding: "0 20px",
         fontFamily: "Questrial, Sans-serif",
@@ -215,7 +217,7 @@ export const getStyle = (props) => {
     case "contact_us_textarea":
       return {
         resize: "none",
-        width: "96%",
+        width: "100%",
         height: 120,
         boxSizing: "border-box",
         padding: "20px",
@@ -228,6 +230,7 @@ export const getStyle = (props) => {
       return {
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         flexDirection: "column",
         backgroundColor: "#fff",
         marginBottom: about_us_bottom_margin,

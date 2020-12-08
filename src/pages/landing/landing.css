@@ -29,6 +29,8 @@
 .about_us_content {
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
   width: 100%;
   margin-top: 60px;
 }
@@ -42,6 +44,7 @@
 .about_us_container {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   /* height: 68.7vh; */
   background-color: #fff;
@@ -58,7 +61,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 35%;
 }
 
 .about_us_description {

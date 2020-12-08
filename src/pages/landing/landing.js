@@ -81,8 +81,7 @@ export function Landing() {
   if (parD > 10) parD = 10
 
   const featureContainer = {
-    width: "45%",
-    // todo width: "36%",
+    width: "36%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -230,6 +229,7 @@ export function Landing() {
         />
         <div style={subHeading_text}>{HOME.subheading}</div>
       </div>
+
       <div id="features" style={topHeading}>
         Our Features
       </div>
@@ -271,16 +271,24 @@ export function Landing() {
         <div id="about" style={topHeading}>
           {HOME.aboutUs}
         </div>
-        <div className="about_us_content">
+        <div className="about_us_content" style={{flexDirection: width > 600 ? "row" : "column"}}>
           {IMAGES.landing.aboutUs.map((src, index) => (
-            <div key={index} className="about_us_images">
+            <div
+              key={index}
+              className="about_us_images"
+              style={{
+                width: width > 600 ? "35%" : "80%",
+                marginBottom: width > 600 ? "0px" : "20px",
+              }}>
               <img
                 src={src}
                 alt={src}
                 width={`${clientImageWidth / 2}px`}
                 height={`${clientImageWidth / 2}px`}></img>
               <div style={about_us_text}>{HOME.aboutUsLogoName[index]}</div>
-              <div style={featureTextStyle}>{HOME.aboutUsDescription[index]}</div>
+              <div style={{...featureTextStyle, width: width > 600 ? "80%" : "100%"}}>
+                {HOME.aboutUsDescription[index]}
+              </div>
             </div>
           ))}
         </div>
@@ -289,26 +297,34 @@ export function Landing() {
         <div id="contact" style={{...topHeading, marginBottom: "50px"}}>
           Contact Us
         </div>
-        <input
-          placeholder="Name"
-          style={{
-            ...contact_us_input,
-            width: "96%",
-            flex: "none",
-          }}
-        />
-        <div
-          style={{
-            display: "flex",
-            width: "96%",
-            flexDirection: "row",
-            margin: "10px 0",
-          }}>
-          <input placeholder="Email" style={{...contact_us_input, marginRight: "20px"}} />
-          <input placeholder="Mobile" style={contact_us_input} />
+        <div style={{width: "70%"}}>
+          <input
+            placeholder="Name"
+            style={{
+              ...contact_us_input,
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              height: "100%",
+              flexDirection: width > 600 ? "row" : "column",
+              margin: "10px 0",
+            }}>
+            <input
+              placeholder="Email"
+              style={{
+                ...contact_us_input,
+                marginRight: "20px",
+                marginBottom: width > 600 ? "0px" : "10px",
+              }}
+            />
+            <input placeholder="Mobile" style={contact_us_input} />
+          </div>
+          <textarea className="textarea" placeholder="Message" style={contact_us_textarea} />
+          <input type="button" style={contact_us_button} value="Send" />
         </div>
-        <textarea className="textarea" placeholder="Message" style={contact_us_textarea} />
-        <input type="button" style={contact_us_button} value="Send" />
       </div>
     </Fragment>
   )
