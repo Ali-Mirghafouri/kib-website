@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kib-website/static/css/main.79e16485.chunk.css",
-    "main.js": "/kib-website/static/js/main.64d34e1f.chunk.js",
-    "main.js.map": "/kib-website/static/js/main.64d34e1f.chunk.js.map",
+    "main.js": "/kib-website/static/js/main.a18daac6.chunk.js",
+    "main.js.map": "/kib-website/static/js/main.a18daac6.chunk.js.map",
     "runtime-main.js": "/kib-website/static/js/runtime-main.5d986cfc.js",
     "runtime-main.js.map": "/kib-website/static/js/runtime-main.5d986cfc.js.map",
     "static/js/2.c3bec42f.chunk.js": "/kib-website/static/js/2.c3bec42f.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.5d986cfc.js",
     "static/js/2.c3bec42f.chunk.js",
     "static/css/main.79e16485.chunk.css",
-    "static/js/main.64d34e1f.chunk.js"
+    "static/js/main.a18daac6.chunk.js"
   ]
 }
