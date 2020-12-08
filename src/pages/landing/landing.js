@@ -192,7 +192,7 @@ export function Landing() {
           position: "relative",
           height: `${carh - 200}px`,
         }}>
-        <Particles
+        {/* <Particles
           style={{
             backgroundColor: "#0000",
             position: "absolute",
@@ -226,7 +226,7 @@ export function Landing() {
               maximumValue: 0.6,
             },
           }}
-        />
+        /> */}
         <div style={subHeading_text}>{HOME.subheading}</div>
       </div>
 
