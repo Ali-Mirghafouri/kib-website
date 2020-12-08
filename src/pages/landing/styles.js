@@ -28,8 +28,6 @@ export const getStyle = (props) => {
   let featureS2 = (featureS - 1.5) * 1.75 + 0.8
   if (featureS2 > 2.5) featureS2 = 2.5
 
-  let about_us_bottom_margin = width / 12.5
-
   switch (type) {
     case "Carousel_slides_text":
       let csw = width - 100
@@ -49,8 +47,6 @@ export const getStyle = (props) => {
         fontWeight: "500",
         height: "100%",
         justifyContent: "center",
-        // marginBottom: "35vh",
-        // marginBottom: "25vh",
         textShadow: "2px 2px 4px #0009",
         marginRight: "30vw",
         width: `${csw}px`,
@@ -112,15 +108,15 @@ export const getStyle = (props) => {
       carh = 400 + carh / 3.4
       if (carh > 600) carh = height - 10
       return {
-        overflowY: "visible",
-        // height: height.toString().concat("px"),
         display: "flex",
+        width: "100%",
         flexDirection: "column",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         paddingLeft: "10vw",
         height: `${carh}px`,
+        maxHeight: `${carh}px`,
       }
 
     case "featureTitleStyle":
@@ -228,6 +224,7 @@ export const getStyle = (props) => {
         fontWeight: 600,
       }
     case "about_us_container":
+      let about_us_bottom_margin = width / 12.5
       return {
         display: "flex",
         alignItems: "center",

@@ -71,17 +71,6 @@ export function Landing() {
   const contact_us_textarea = getStyle([width, height, "contact_us_textarea"])
   const about_us_container = getStyle([width, height, "about_us_container"])
 
-  // let bfs = bpd / 4;
-  // if (bfs > 3) bfs = 3;
-
-  // .Carousel_slides_button:focus {
-  //   outline: none;
-  //   box-shadow: none;
-  // }
-  // .Carousel_slides_button:hover {
-  //   cursor: pointer;
-  // }
-
   let carh = width - 400
   if (carh < 0) carh = 0
   carh = 400 + carh / 3.4
@@ -156,10 +145,9 @@ export function Landing() {
       </div>
 
       <Carousel
-        style={{height: `${carh}px`}}
+        height={`${carh - 90}px`}
         autoplay={false}
         autoplayInterval={2000}
-        className="wrapAround"
         dragging={false}
         pauseOnHover={true}
         speed={2000}
@@ -174,16 +162,25 @@ export function Landing() {
         {HOME.carousel.map((text, index) => (
           <div
             style={{
-              ...Carousel_slides,
-              backgroundImage: `url(${IMAGES.landing.slides[index]})`,
-              backgroundSize: `${width + 100}px auto`,
-            }}
-            key={index}>
-            <div style={Carousel_slides_text}>
-              {text}
-              <button style={Carousel_slides_button} onClick={executeScroll}>
-                {HOME.slidesButtons[index]}
-              </button>
+              height: "100%",
+              width: "100%",
+              position: "absolute",
+              top: "-45px",
+              display: "flex",
+            }}>
+            <div
+              style={{
+                ...Carousel_slides,
+                backgroundImage: `url(${IMAGES.landing.slides[index]})`,
+                backgroundSize: `${width + 100}px auto`,
+              }}
+              key={index}>
+              <div style={Carousel_slides_text}>
+                {text}
+                <button style={Carousel_slides_button} onClick={executeScroll}>
+                  {HOME.slidesButtons[index]}
+                </button>
+              </div>
             </div>
           </div>
         ))}
@@ -203,7 +200,6 @@ export function Landing() {
             left: 0,
           }}
           width={`${width}px`}
-          height={`${carh - 200 - parD}px`}
           params={{
             particles: {
               number: {
