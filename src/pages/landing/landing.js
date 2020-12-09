@@ -95,6 +95,7 @@ export function Landing() {
 
   return (
     <Fragment>
+      {width + " x" + height}
       <div
         style={{
           background: "white",
