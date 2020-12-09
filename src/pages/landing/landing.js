@@ -3,7 +3,7 @@ import "./landing.css"
 import Carousel from "nuka-carousel"
 import React, {Fragment, useEffect, useRef, useState} from "react"
 import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai"
-import Particles from "react-particles-js"
+// import Particles from "react-particles-js"
 
 import {HOME} from "../../constant/const"
 import {IMAGES} from "../../image"
@@ -97,50 +97,67 @@ export function Landing() {
     <Fragment>
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          color: "red",
-          zIndex: 10,
-        }}>
-        {width}x{height}
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          display: "flex",
-          top: "15px",
-          color: "#FFF",
-          paddingLeft: "10vw",
+          background: "white",
+          position: "fixed",
           fontSize: "28px",
           fontFamily: "Questrial, Sans-serif",
           fontWeight: 500,
+          zIndex: "100",
+          opacity: 0.5,
+          height: width > 1100 ? "9%" : "5%",
+          width: "100%",
+        }}
+      />
+      <div
+        style={{
+          position: "fixed",
+          display: "flex",
+          justifyContent: "flex-start",
           alignItems: "center",
-          zIndex: "1000",
+          fontFamily: "Questrial, Sans-serif",
+          fontWeight: 500,
+          zIndex: "100",
+          height: width > 1100 ? "9%" : "5%",
+          width: "100%",
         }}>
         <img
           src={IMAGES.landing.aboutUs[0]}
           alt="logo"
-          style={{marginRight: "3vw", height: "4vw"}}
+          style={{
+            marginRight: "3vw",
+            height: "2vw",
+            marginLeft: "17vw",
+          }}
         />
         <div
           style={{
-            color: "rgb(152, 240, 73)",
+            color: "#61CE70",
             fontWeight: "bold",
-            fontSize: "3vw",
+            fontSize: "2.3vw",
+            textShadow: "1px 1px 3px rgba(0, 0, 0, 0.54)",
           }}>
           RICHA
         </div>
-        {navbarLabels.map((item, index) => (
-          <a
-            style={index === navIndex ? navbarHover : navbar}
-            href={item.link}
-            key={index}
-            onMouseEnter={() => setNavIndex(index)}
-            onMouseLeave={() => setNavIndex(-1)}>
-            {item.label}
-          </a>
-        ))}
+        <div style={{flexGrow: 1}} />
+        <div
+          style={{
+            marginRight: "17vw",
+          }}>
+          {navbarLabels.map((item, index) => (
+            <a
+              style={
+                index === navIndex
+                  ? {...navbarHover, marginRight: index === navbarLabels.length - 1 ? "" : "2vw"}
+                  : {...navbar, marginRight: index === navbarLabels.length - 1 ? "" : "2vw"}
+              }
+              href={item.link}
+              key={index}
+              onMouseEnter={() => setNavIndex(index)}
+              onMouseLeave={() => setNavIndex(-1)}>
+              {item.label}
+            </a>
+          ))}
+        </div>
       </div>
 
       <Carousel
@@ -192,41 +209,6 @@ export function Landing() {
           position: "relative",
           height: `${carh - 200}px`,
         }}>
-        {/* <Particles
-          style={{
-            backgroundColor: "#0000",
-            position: "absolute",
-            left: 0,
-          }}
-          width={`${width}px`}
-          params={{
-            particles: {
-              number: {
-                value: parN,
-                max: -1,
-                density: {
-                  enable: false,
-                  area: 1200,
-                },
-              },
-              size: {
-                value: width < 600 ? 2 : 4,
-              },
-              color: {
-                value: "#F00",
-              },
-              stroke: {
-                width: 0,
-                color: "#0F0",
-              },
-            },
-            opacity: {
-              value: 0.4,
-              random: false,
-              maximumValue: 0.6,
-            },
-          }}
-        /> */}
         <div style={subHeading_text}>{HOME.subheading}</div>
       </div>
 

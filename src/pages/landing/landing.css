@@ -98,3 +98,8 @@
   color: #ccc;
   padding: 0 20px;
 }
+
+.test {
+  position: fixed;
+  width: ""
+}

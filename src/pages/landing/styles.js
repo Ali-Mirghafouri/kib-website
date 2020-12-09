@@ -14,9 +14,9 @@ export const getStyle = (props) => {
 
   let fs = width - 1120
   if (fs < 0) {
-    fs = 3
+    fs = 2.5
   } else {
-    fs = 1.5
+    fs = 1.1
   }
   let featureS = (width - 400) / 1100
   if (featureS < 0) {
@@ -61,20 +61,21 @@ export const getStyle = (props) => {
     case "navbarHover":
       return {
         textDecoration: "none",
-        color: "#fff",
-        padding: `0 ${10 + pd}px`,
+        color: "block",
+        // padding: `0 ${10 + pd}px`,
         fontSize: `${fs}vw`,
         backgroundColor: "#dddddd66",
         borderRadius: "8px",
         transition: "background-color 0.2s ease",
+        fontWeight: "bold",
       }
 
     case "navbar":
       return {
         textDecoration: "none",
-        color: "#fff",
-        padding: `0 ${10 + pd}px`,
+        color: "black",
         fontSize: `${fs}vw`,
+        fontWeight: "bold",
       }
 
     case "Carousel_slides_button":
