@@ -189,6 +189,7 @@ export const getStyle = (props) => {
       }
 
     case "contact_us_button":
+      let about_us_bottom_margin = width / 12.5
       return {
         width: "100%",
         height: 40,
@@ -202,6 +203,7 @@ export const getStyle = (props) => {
         fontFamily: "Questrial, Sans-serif",
         fontSize: "1rem",
         fontWeight: 600,
+        marginBottom: about_us_bottom_margin,
       }
     case "contact_us_input":
       return {
@@ -227,14 +229,12 @@ export const getStyle = (props) => {
         fontWeight: 600,
       }
     case "about_us_container":
-      let about_us_bottom_margin = width / 12.5
       return {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
         backgroundColor: "#fff",
-        marginBottom: about_us_bottom_margin,
       }
     default:
       return {}

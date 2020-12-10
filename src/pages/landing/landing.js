@@ -75,6 +75,7 @@ export function Landing() {
   if (carh < 0) carh = 0
   carh = 400 + carh / 3.4
   if (carh > 600) carh = height - 10
+  if (width <= 373) carh = carh - 15
   let parD = carh - 400
   if (parD < 0) parD = 0
   parD = parD / 15
@@ -95,7 +96,7 @@ export function Landing() {
 
   return (
     <Fragment>
-      {width + " x" + height}
+      {/* {width + " x" + height} */}
       <div
         style={{
           background: "white",
@@ -126,7 +127,7 @@ export function Landing() {
           alt="logo"
           style={{
             marginRight: "3vw",
-            height: "2vw",
+            height: width < 750 ? "5vw" : "2.5vw",
             marginLeft: "17vw",
           }}
         />
@@ -134,7 +135,7 @@ export function Landing() {
           style={{
             color: "#61CE70",
             fontWeight: "bold",
-            fontSize: "2.3vw",
+            fontSize: width < 750 ? "2.8vw" : "2.3vw",
             textShadow: "1px 1px 3px rgba(0, 0, 0, 0.54)",
           }}>
           RICHA
@@ -182,7 +183,7 @@ export function Landing() {
               height: "100%",
               width: "100%",
               position: "absolute",
-              top: "-45px",
+              top: width <= 373 ? "-55px" : "-45px",
               display: "flex",
             }}>
             <div
@@ -267,7 +268,8 @@ export function Landing() {
                 src={src}
                 alt={src}
                 width={`${clientImageWidth / 2}px`}
-                height={`${clientImageWidth / 2}px`}></img>
+                height={`${clientImageWidth / 2}px`}
+              />
               <div style={about_us_text}>{HOME.aboutUsLogoName[index]}</div>
               <div style={{...featureTextStyle, width: width > 600 ? "80%" : "100%"}}>
                 {HOME.aboutUsDescription[index]}
