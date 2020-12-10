@@ -38,14 +38,6 @@ export function Landing() {
     return () => window.removeEventListener("resize", updateDimensions)
   }, [])
 
-  // const handleScroll = () => {
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
-
   const navbarLabels = [
     {label: "Features", link: "#features"},
     {label: "Clients", link: "#clients"},
@@ -96,7 +88,6 @@ export function Landing() {
 
   return (
     <Fragment>
-      {/* {width + " x" + height} */}
       <div
         style={{
           background: "white",
@@ -164,7 +155,7 @@ export function Landing() {
 
       <Carousel
         height={`${carh - 90}px`}
-        autoplay={false}
+        autoplay={true}
         autoplayInterval={2000}
         dragging={false}
         pauseOnHover={true}
