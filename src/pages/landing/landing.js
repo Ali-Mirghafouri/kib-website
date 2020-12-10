@@ -74,7 +74,7 @@ export function Landing() {
   if (parD > 10) parD = 10
 
   const featureContainer = {
-    width: "36%",
+    width: width > 600 ? "36%" : "50%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
