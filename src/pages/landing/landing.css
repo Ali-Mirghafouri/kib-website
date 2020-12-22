@@ -102,4 +102,5 @@
 .test {
   position: fixed;
   width: "";
+  -moz-column-gap: ;
 }

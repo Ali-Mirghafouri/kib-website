@@ -25,7 +25,7 @@ export const getStyle = (props) => {
   featureS += 1.5
   if (featureS > 2.5) featureS = 2.5
 
-  let featureS2 = (featureS - 1.5) * 1.75 + 0.8
+  let featureS2 = (featureS - 2) * 1.75 + 0.8
   if (featureS2 > 2.5) featureS2 = 2.5
 
   switch (type) {
@@ -141,6 +141,8 @@ export const getStyle = (props) => {
         padding: "0 20px",
         lineHeight: 1.5,
         textAlign: "center",
+        height: "15vh",
+        width: "30vw",
       }
     case "topHeading":
       return {
@@ -153,7 +155,7 @@ export const getStyle = (props) => {
       }
 
     case "featureIconStyle":
-      let iw = (width - 400) / 32
+      let iw = (width - 900) / 32
       if (iw < 0) iw = 0
       iw += 25
       return {
@@ -166,6 +168,8 @@ export const getStyle = (props) => {
       return {
         display: "flex",
         columnGap: "25vw",
+        mozColumnGap: "25vw",
+        WebkitColumnGap: "25vw",
         marginBottom: "70px",
         alignItems: "center",
       }
@@ -183,7 +187,7 @@ export const getStyle = (props) => {
         color: "#595959",
         fontFamily: "Questrial, Sans-serif",
         fontWeight: 900,
-        fontSize: `${featureS2 + 0.05}rem`,
+        fontSize: `${featureS2}rem`,
         marginTop: "30px",
         marginBottom: "2vh",
       }

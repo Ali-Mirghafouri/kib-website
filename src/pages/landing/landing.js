@@ -75,7 +75,7 @@ export function Landing() {
   if (parD > 10) parD = 10
 
   const featureContainer = {
-    width: width > 600 ? "36%" : "50%",
+    width: width > 600 ? "34%" : "50%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -235,7 +235,7 @@ export function Landing() {
             item={item}
             containerStyle={featureContainer}
             titleStyle={featureTitleStyle}
-            textStyle={featureTextStyle}
+            textStyle={{...featureTextStyle, height: ""}}
             iconStyle={featureIconStyle}
           />
         ))}
@@ -265,17 +265,16 @@ export function Landing() {
               key={index}
               className="about_us_images"
               style={{
-                width: width > 600 ? "35%" : "80%",
+                width: width > 600 ? "32%" : "80%",
                 marginBottom: width > 600 ? "0px" : "20px",
               }}>
               <img
                 src={src}
                 alt={src}
-                width={`${clientImageWidth / 2}px`}
-                height={`${clientImageWidth / 2}px`}
+                height={`${clientImageWidth / 1.5}px`}
               />
               <div style={about_us_text}>{HOME.aboutUsLogoName[index]}</div>
-              <div style={{...featureTextStyle, width: width > 600 ? "80%" : "100%"}}>
+              <div style={{...featureTextStyle, width: width > 600 ? "90%" : "100%"}}>
                 {HOME.aboutUsDescription[index]}
               </div>
             </div>
