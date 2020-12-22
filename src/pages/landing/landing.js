@@ -9,6 +9,7 @@ import {HOME} from "../../constant/const"
 import {IMAGES} from "../../image"
 import {FeatureCard} from "./feature"
 import {getStyle} from "./styles"
+import {DropDownNav} from "../../component"
 
 export const SCROLL_DIRECTION_DOWN = "SCROLL_DIRECTION_DOWN"
 export const SCROLL_DIRECTION_UP = "SCROLL_DIRECTION_UP"
@@ -132,25 +133,36 @@ export function Landing() {
           RICHA
         </div>
         <div style={{flexGrow: 1}} />
-        <div
-          style={{
-            marginRight: "17vw",
-          }}>
-          {navbarLabels.map((item, index) => (
-            <a
-              style={
-                index === navIndex
-                  ? {...navbarHover, marginRight: index === navbarLabels.length - 1 ? "" : "2vw"}
-                  : {...navbar, marginRight: index === navbarLabels.length - 1 ? "" : "2vw"}
-              }
-              href={item.link}
-              key={index}
-              onMouseEnter={() => setNavIndex(index)}
-              onMouseLeave={() => setNavIndex(-1)}>
-              {item.label}
-            </a>
-          ))}
-        </div>
+        {width < 600 ? (
+          <div style={{position: "fixed", right: "10px", top: "2.5vw"}}>
+            <DropDownNav
+              navIndex={navIndex}
+              navbar={navbar}
+              navbarHover={navbarHover}
+              setNavIndex={setNavIndex}
+            />
+          </div>
+        ) : (
+          <div
+            style={{
+              marginRight: "17vw",
+            }}>
+            {navbarLabels.map((item, index) => (
+              <a
+                style={
+                  index === navIndex
+                    ? {...navbarHover, marginRight: index === navbarLabels.length - 1 ? "" : "2vw"}
+                    : {...navbar, marginRight: index === navbarLabels.length - 1 ? "" : "2vw"}
+                }
+                href={item.link}
+                key={index}
+                onMouseEnter={() => setNavIndex(index)}
+                onMouseLeave={() => setNavIndex(-1)}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
 
       <Carousel
@@ -211,9 +223,10 @@ export function Landing() {
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: width > 600 ? "row" : "column",
           flexWrap: "wrap",
           justifyContent: "center",
+          alignItems: "center",
           paddingBottom: "30px",
         }}>
         {HOME.features.map((item, index) => (

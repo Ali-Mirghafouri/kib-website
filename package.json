@@ -10,6 +10,7 @@
     "nuka-carousel": "^4.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-dropdown-wrapper": "0.0.4",
     "react-icons": "^3.11.0",
     "react-particles-js": "^3.4.1",
     "react-scripts": "4.0.0",
